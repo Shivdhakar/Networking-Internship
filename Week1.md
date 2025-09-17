@@ -1,13 +1,11 @@
-# Day 1: Networking Basics
-# Networking Internship Notes
 
-Welcome to my Networking Internship notes repository. This repo contains a detailed summary of my learning journey through the internship, covering fundamental networking concepts, network planning, and addressing schemes.
+# Networking Internship Notes
 
 ## Day 1: Networking Basics
 
-**Topics Covered:**
+**Topics **
 
-- **What is Networking?**  
+- **Networking?**  
   Understanding the fundamental definition and purpose.
 
 - **Components of Networking:**  
@@ -38,14 +36,11 @@ Welcome to my Networking Internship notes repository. This repo contains a detai
   - Connection Reliability  
   - Bandwidth Limitations  
 
----
 
-## Day 2: Deep Dive into LAN, MAN, and WAN + Network Planning Exercise
+## Day 2:
 
 ### Learning Focus:
 Understanding differences between LAN, MAN, WAN and designing network architecture.
-
----
 
 ### Network Planning Scenario:
 
