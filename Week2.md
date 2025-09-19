@@ -79,28 +79,37 @@ The **OSI Model** is a conceptual framework used to standardize how different ne
 
 
 
-## ✉️ Example : Sending an Email Using Outlook – OSI Layers
+## Example : Voice Call Using VoIP (e.g., WhatsApp Call) – OSI Model Breakdown
+
+
+
+When you make a voice call using a VoIP app like WhatsApp, all 7 OSI layers work together to send your voice as data over the internet.
 
 - **Layer 7: Application**  
-  Outlook uses **SMTP** to send the email and **IMAP/POP3** to receive it.
+  WhatsApp uses VoIP services to initiate and manage the call. The app handles call setup, user interface, and signaling.
 
 - **Layer 6: Presentation**  
-  Email content and attachments are **encoded**  and possibly **encrypted** using SSL/TLS.
+  Your voice is converted into digital audio, then **compressed** using codecs like **Opus** to reduce size without losing quality.
 
 - **Layer 5: Session**  
-  A **session** is established and maintained between Outlook and the mail server during the email exchange.
+  A session is established between your device and the receiver's device to maintain the call connection and control.
 
 - **Layer 4: Transport**  
-  Uses **TCP** to break the email into segments and ensure reliable delivery.
+  Voice data is sent using **UDP** (User Datagram Protocol), which allows for faster delivery but with less reliability—ideal for real-time audio.
 
 - **Layer 3: Network**  
-  Routes the email packets using **IP addresses** to reach the mail server and recipient.
+  The data packets are routed across the internet to the recipient’s IP address using **IPv4** or **IPv6** protocols.
 
 - **Layer 2: Data Link**  
-  Transfers frames locally between the device and the network using **MAC addresses**.
+  The data frames are transmitted over the local network (Wi-Fi or cellular) using MAC addressing.
 
 - **Layer 1: Physical**  
-  Transmits raw bits over physical media like **Ethernet cables** or **Wi-Fi** signals.
+  The digital data is sent as electrical signals over Wi-Fi, cellular radio waves, or Ethernet cables.
+
+
+
+
+
 
 
 
