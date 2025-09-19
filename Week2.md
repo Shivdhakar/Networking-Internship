@@ -64,23 +64,31 @@ The **OSI Model** is a conceptual framework used to standardize how different ne
 
 
 
+## ✉️ Example 2 (Short): Sending an Email Using Outlook – OSI Layers
 
+- **Layer 7: Application**  
+  Outlook uses **SMTP** to send the email and **IMAP/POP3** to receive it.
 
-## ✉️ Example  (Short): Sending an Email Using Outlook – OSI Layers
+- **Layer 6: Presentation**  
+  Email content and attachments are **encoded** (e.g., Base64) and possibly **encrypted** using SSL/TLS.
 
-A quick look at how the OSI Model works when you send an email using Outlook.
+- **Layer 5: Session**  
+  A **session** is established and maintained between Outlook and the mail server during the email exchange.
 
-| Layer | Name         | What Happens                                    | Examples                  |
-|-------|--------------|--------------------------------------------------|---------------------------|
-| 7     | Application   | Outlook uses SMTP to send email                 | SMTP, IMAP, POP3          |
-| 6     | Presentation  | Email & attachments encoded/encrypted           | SSL/TLS, Base64           |
-| 5     | Session       | Session opened with the mail server             | NetBIOS, RPC              |
-| 4     | Transport     | Data broken into segments, sent reliably        | TCP                       |
-| 3     | Network       | Email routed via IP to destination server       | IP, ICMP                  |
-| 2     | Data Link     | Frames sent between local devices (MAC address) | Ethernet, MAC             |
-| 1     | Physical      | Bits sent via cable or Wi-Fi                    | Cables, Wi-Fi, NIC        |
+- **Layer 4: Transport**  
+  Uses **TCP** to break the email into segments and ensure reliable delivery.
 
-📌 **Summary:** Sending an email uses **all 7 OSI layers**, from writing the message (Layer 7) to transmitting data bits (Layer 1).
+- **Layer 3: Network**  
+  Routes the email packets using **IP addresses** to reach the mail server and recipient.
+
+- **Layer 2: Data Link**  
+  Transfers frames locally between your device and the network using **MAC addresses**.
+
+- **Layer 1: Physical**  
+  Transmits raw bits over physical media like **Ethernet cables** or **Wi-Fi** signals.
+
+📌 **Summary:**  
+Sending an email involves all 7 OSI layers, from the application you use to the physical transfer of data.
 
 
 
