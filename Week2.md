@@ -85,7 +85,7 @@ The **OSI Model** is a conceptual framework used to standardize how different ne
   Outlook uses **SMTP** to send the email and **IMAP/POP3** to receive it.
 
 - **Layer 6: Presentation**  
-  Email content and attachments are **encoded** (e.g., Base64) and possibly **encrypted** using SSL/TLS.
+  Email content and attachments are **encoded**  and possibly **encrypted** using SSL/TLS.
 
 - **Layer 5: Session**  
   A **session** is established and maintained between Outlook and the mail server during the email exchange.
@@ -97,7 +97,7 @@ The **OSI Model** is a conceptual framework used to standardize how different ne
   Routes the email packets using **IP addresses** to reach the mail server and recipient.
 
 - **Layer 2: Data Link**  
-  Transfers frames locally between your device and the network using **MAC addresses**.
+  Transfers frames locally between the device and the network using **MAC addresses**.
 
 - **Layer 1: Physical**  
   Transmits raw bits over physical media like **Ethernet cables** or **Wi-Fi** signals.
