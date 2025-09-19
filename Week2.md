@@ -64,7 +64,22 @@ The **OSI Model** is a conceptual framework used to standardize how different ne
 
 
 
-## ✉️ Example 2 (Short): Sending an Email Using Outlook – OSI Layers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## ✉️ Example : Sending an Email Using Outlook – OSI Layers
 
 - **Layer 7: Application**  
   Outlook uses **SMTP** to send the email and **IMAP/POP3** to receive it.
@@ -86,9 +101,6 @@ The **OSI Model** is a conceptual framework used to standardize how different ne
 
 - **Layer 1: Physical**  
   Transmits raw bits over physical media like **Ethernet cables** or **Wi-Fi** signals.
-
-📌 **Summary:**  
-Sending an email involves all 7 OSI layers, from the application you use to the physical transfer of data.
 
 
 
