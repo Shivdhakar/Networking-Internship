@@ -112,6 +112,64 @@ When you make a voice call using a VoIP app like WhatsApp, all 7 OSI layers work
 
 
 
+### 🔹 Using the OSI Model (7 Layers)
+
+1. **Application Layer (7)**  
+   - WhatsApp initiates the voice call.
+   - Handles signaling, call setup, and UI interaction.
+
+2. **Presentation Layer (6)**  
+   - The voice is **compressed** using codecs like **Opus**.
+   - If enabled, the call is **encrypted** (e.g., end-to-end encryption).
+
+3. **Session Layer (5)**  
+   - A **session** is established between both devices.
+   - Manages the control and flow of the call.
+
+4. **Transport Layer (4)**  
+   - Uses **UDP** for fast delivery of voice packets.
+   - Some real-time calls may use **RTP** (Real-time Transport Protocol) on top of UDP.
+
+5. **Network Layer (3)**  
+   - Each packet is addressed with an **IP address**.
+   - Routers forward the packets across the internet to the receiver.
+
+6. **Data Link Layer (2)**  
+   - Uses **MAC addresses** to deliver frames within the local network.
+   - Data is framed and checked for errors.
+
+7. **Physical Layer (1)**  
+   - Bits (0s and 1s) are transmitted over **Wi-Fi**, **4G/5G**, or **Ethernet**.
+   - This is the hardware layer — signal transmission.
+
+---
+
+### 🔹 Using the TCP/IP Model (4 Layers)
+
+1. **Application Layer**  
+   - WhatsApp manages the voice call interface and signaling.
+   - Handles codecs, compression, and encryption.
+
+2. **Transport Layer**  
+   - Voice data is sent using **UDP**, optionally with **RTP**.
+   - Focuses on speed rather than reliability (real-time).
+
+3. **Internet Layer**  
+   - Assigns and routes **IP packets** from your device to the recipient.
+
+4. **Link Layer**  
+   - Handles framing, MAC addressing, and transmission over the **physical medium** (Wi-Fi, cellular, Ethernet).
+
+---
+
+### 🧠 Summary
+
+- In the **OSI Model**, the process is broken into **7 detailed layers**, each with specific roles (like Session and Presentation).
+- In the **TCP/IP Model**, the process is more practical, combining those into **4 layers**.
+- Regardless of the model, the data flow and purpose are the same: convert your voice into data, send it, and play it back at the other end — all in real-time.
+
+
+
 
 
 
