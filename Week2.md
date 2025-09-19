@@ -169,6 +169,25 @@ When you make a voice call using a VoIP app like WhatsApp, all 7 OSI layers work
 - Regardless of the model, the data flow and purpose are the same: convert your voice into data, send it, and play it back at the other end — all in real-time.
 
 
+## 📊 Detailed Comparison Table: OSI Model vs TCP/IP Model
+
+| Feature                        | OSI Model                             | TCP/IP Model                          |
+|--------------------------------|----------------------------------------|----------------------------------------|
+| **Developed By**              | ISO (International Standards Organization) | U.S. Department of Defense         |
+| **Year Introduced**           | 1984                                   | 1970s                                 |
+| **Number of Layers**          | 7 Layers                               | 4 Layers                               |
+| **Layer Names**               | Application, Presentation, Session, Transport, Network, Data Link, Physical | Application, Transport, Internet, Link |
+| **Usage Type**                | Conceptual/Theoretical model           | Practical/Implemented model            |
+| **Protocol Dependency**       | Protocol-independent                   | Protocol-oriented                      |
+| **Real-World Use**            | Mainly used for teaching/reference     | Used in real-world network communication (e.g., Internet) |
+| **Approach**                  | Vertical and layered separation        | Layer merging (simplified)             |
+| **Transport Layer Protocols** | TCP, UDP                               | TCP, UDP                               |
+| **Network Layer Protocols**   | IP, ICMP, IGMP                         | IP, ICMP, ARP                          |
+| **Data Link Layer**           | Separate layer for framing, MAC        | Merged into Link layer                 |
+| **Session & Presentation**    | Separate layers                        | Included in Application layer          |
+| **Flexibility**               | More detailed but less practical       | More flexible and efficient            |
+| **Preferred For**             | Understanding and designing networks   | Actual implementation (Internet stack) |
+
 
 
 
