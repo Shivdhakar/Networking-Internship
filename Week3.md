@@ -108,6 +108,28 @@ The trunk link carries traffic for **both VLAN 10 and VLAN 20** across the two s
 
 ##  How STP Works
 1. **Root Bridge Election** → Switches exchange BPDUs; the lowest Bridge ID becomes Root.  
-2
+2. **Root Port Selection** → Each non-root switch chooses the best path to reach the root.  
+3. **Designated Port Selection** → On each segment, one port is chosen as Designated.  
+4. **Blocking** → Extra ports that would create loops are blocked.  
+5. **Convergence** → After timers, the topology stabilizes and traffic flows without loops.  
+
+---
+
+##  Simple Examples
+- **Triangle of 3 Switches (A–B–C with extra link A–C):**  
+  One switch becomes Root, one link is blocked to avoid loop.  
+
+- **Access switch with 2 uplinks to distribution switches:**  
+  One uplink forwards traffic, the other is blocked. If the active one fails, backup link unblocks.  
+
+---
+
+##  Example Cisco Commands
+```bash
+show spanning-tree            # View STP status
+show spanning-tree root       # Show root bridge info
+show spanning-tree brief      # Quick port states
+spanning-tree vlan 1 priority 4096   # Set lower priority to make this switch root
+
 
 
