@@ -81,7 +81,33 @@ The trunk link carries traffic for **both VLAN 10 and VLAN 20** across the two s
 
 ---
 
-### ✅ Quick Take
-Think of **VLANs** as *separate rooms* inside a building, each with its own group of people.  
-A **trunk** is like a *shared hallway* where people from every room can pass—while still wearing a badge (tag) that shows which room they belong to.
+# Spanning Tree Protocol (STP)
+
+##  What is STP?
+- **STP (IEEE 802.1D)** is used in Ethernet networks to **avoid loops** when multiple switches are connected.  
+- It ensures only **one active path** exists and blocks redundant links that could cause loops.  
+- Final result → A **loop-free Layer 2 topology**.
+
+---
+
+##  Key Concepts
+- **Root Bridge** → The main reference switch (lowest Bridge ID).  
+- **Bridge ID (BID)** → Combination of priority + MAC address, used to elect the root.  
+- **Root Port (RP)** → On non-root switches, this is the port with the best path to the Root Bridge.  
+- **Designated Port (DP)** → Port that forwards frames on a LAN segment.  
+- **Blocked Port** → Port that doesn’t forward traffic to prevent loops.  
+- **Path Cost** → Lower cost = better path (decided by link speed).  
+- **Port States (Classic STP)** →  
+  - Blocking  
+  - Listening  
+  - Learning  
+  - Forwarding  
+  *(RSTP speeds this process up).*
+
+---
+
+##  How STP Works
+1. **Root Bridge Election** → Switches exchange BPDUs; the lowest Bridge ID becomes Root.  
+2
+
 
