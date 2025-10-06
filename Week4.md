@@ -1,4 +1,5 @@
 # Routing and Its Types
+
 ## What is Routing?
 Routing means finding the best path for data to travel from one device to another in a network.
 
