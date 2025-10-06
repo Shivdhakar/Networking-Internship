@@ -1,74 +1,52 @@
-# Routing and its Types
-
+# Routing and Its Types
 ## What is Routing?
-Routing is the process of finding the **best path** for data packets to travel from **source to destination** in a network.
+Routing means finding the best path for data to travel from one device to another in a network.
 
-## Routing Types
+## Types of Routing
 
 ### 1. Static Routing
-- Routes are **manually added** by the network administrator.  
-- Does **not update automatically** if the network changes.  
-- **Simple, secure,** but less flexible.  
-- Best suited for **small or stable** networks.
+- Routes are added **manually** by the admin.  
+- Does **not change** if the network changes.  
+- Easy and secure but not flexible.  
+- Best for **small or fixed** networks.  
 
-** Use When:**
-- Small office or home networks.  
-- Networks with few routers or routes.  
-- When **stability and security** matter more than flexibility.
+**Example:** 
+Small office or home network.
 
 ### 2. Dynamic Routing
-- Routes are **automatically learned and updated** using routing protocols.  
-- Adapts to **network changes** like link failure or new paths.  
-- Best for **large and complex** networks.
+- Routers **learn routes automatically** using protocols.  
+- **Updates routes** when network changes.  
+- Best for **large or changing** networks.  
 
-** Use When:**
-- Large organizations or **enterprise networks**.  
-- **ISPs** (Internet Service Providers).  
-- **Data centers** with frequently changing routes.
+**Example:** 
+ISP or enterprise network.
 
-##  Troubleshooting Steps
+## Troubleshooting
 
-### Static Routing
-- Check if route details (IP, subnet mask, next-hop) are correct.  
-- Test connectivity using **ping** or **traceroute**.  
-- Make sure the **interface is up**.  
-- View the routing table with `show ip route`.
+**Static Routing**
+- Check IP, subnet mask, and next-hop.  
+- Use `ping` or `traceroute` to test.  
+- Check if interface is up.  
 
-###  Dynamic Routing
-- Confirm the routing protocol is **enabled on correct interfaces**.  
-- Check **neighbor relationships** (`show ip ospf neighbor`, `show ip eigrp neighbors`).  
-- Look for wrong configurations (e.g., wrong area in OSPF, wrong AS in EIGRP).  
-- Check for **unstable links or flapping networks**.  
-- Use `debug ip routing` carefully to monitor route updates.
+**Dynamic Routing**
+- Make sure routing protocol is on.  
+- Check neighbors (`show ip ospf neighbor`).  
+- Look for wrong area or AS number.  
 
-## Interdomain & Intradomain Routing
+##  Interdomain vs Intradomain 
 
-| Type | Description | Examples |
-|------|--------------|-----------|
-| **Intradomain Routing** | Used **within a single organization or AS**. Focus on internal routing efficiency. | RIP, OSPF, EIGRP |
-| **Interdomain Routing** | Used **between different organizations or ASes**. Handles Internet-level routing. | BGP (Border Gateway Protocol) |
-
+| Type | Used For | Example |
+|------|-----------|----------|
+| **Intradomain** | Inside one organization | RIP, OSPF |
+| **Interdomain** | Between different networks | BGP |
 
 ##  RIP (Routing Information Protocol)
-
-- **Type:** Distance Vector Routing Protocol  
-- **Metric Used:** Hop Count (maximum 15 hops)  
-- **Updates:** Sent every 30 seconds  
+- **Type:** Distance Vector  
+- **Metric:** Hop count (max 15)  
+- **Update:** Every 30 sec  
 - **Algorithm:** Bellman-Ford  
-- **Versions:**  
-  - RIP v1 → Classful (no subnet info)  
-  - RIP v2 → Classless (supports subnet masks)  
-- **Limitation:** Not suitable for large networks due to hop count limit.
+- **Limit:** Not for big networks  
 
-##  Troubleshooting RIP
-- Verify **network connectivity** (ping, tracert).  
-- Check **RIP configuration** and network statements.  
-- Ensure there are **no routing loops**.  
-- Use commands like `show ip route` or `debug ip rip` to check routes.
-
----
-
-## Example Scenarios
-- **Intradomain:** A company uses **RIP or OSPF** to route data within its LAN.  
-- **Interdomain:** The same company connects to an **ISP using BGP**.
-
+## Example
+- Inside company → **RIP or OSPF**  
+- Connect to ISP → **BGP**
