@@ -33,3 +33,26 @@ Used in big networks like enterprises or ISPs for fast and loop-free routing.
 - Check router ID  
 - Match hello/dead timers  
 - View learned routes → `show ip route ospf`
+
+  #  EIGRP (Enhanced Interior Gateway Routing Protocol)
+
+##  Basic Info
+- Full Form: Enhanced Interior Gateway Routing Protocol  
+- Type: Dynamic Routing Protocol  
+- Developed by: Cisco  
+- Category: Hybrid (Distance Vector + Link State)
+
+##  Working
+- Uses **DUAL (Diffusing Update Algorithm)** for best path  
+- Metric: Bandwidth + Delay + Load + Reliability  
+- Sends **partial & triggered updates** (not full)
+
+## Values
+- Administrative Distance: 90 (internal), 170 (external)  
+- Protocol Number: 88  
+
+##  Features
+- Classless (supports VLSM & CIDR)  
+- Supports IPv4 and IPv6  
+- Forms neighbor relationships  
+
