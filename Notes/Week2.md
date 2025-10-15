@@ -1,4 +1,4 @@
-# Week 2: OSI Model (Open Systems Interconnection)
+#  OSI Model (Open Systems Interconnection)
 
 The **OSI Model** is a conceptual framework used to standardize how different networking systems communicate. It divides the network communication process into **7 layers**, where each layer performs a specific role in handling and transmitting data across a network.
 
