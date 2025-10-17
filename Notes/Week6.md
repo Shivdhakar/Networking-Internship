@@ -21,28 +21,52 @@ No more typing IPs manually Router gives automatically
 
 ---
 
-**NTP = Time Keeper**  
-All computers show SAME time! (No more "5 min fast" fights)  
+# NTP (Network Time Protocol)
 
-**Super Simple:**  
-- My laptop: "What's real time?"  
-- Server: "It's 2:30 PM exactly"  
-- Laptop: *Sets clock*   
+##  What is NTP?
+NTP stands for **Network Time Protocol**.  
+It is used to **synchronize the time** of all devices (like routers, switches, servers, and computers) in a network with a **central time server**.
 
-**Port:** `123`  
-**Why UDP?** Quick, no hello needed!  
+##  How It Works
+- All devices connect to an **NTP server**.
+- The server provides the **correct time**.
+- Devices adjust their clocks to match the server’s time.
+- This keeps the **same time** across the network — important for logging, security, and communication.
+
+##  Example
+If your router and PC have different times, NTP helps both match the **exact same time** as the time server.
 
 ---
 
-**TCP Handshake = Connection Hello**  
-Before WhatsApp chat, say "Hi" 3 times!  
+#  Three-Way Handshake (TCP Connection)
 
-**3 Steps:**  
-1. **SYN:** Me → You: "Wanna chat?"  
-2. **SYN-ACK:** You → Me: "Yes! Ready!"  
-3. **ACK:** Me → You: "Cool, let's talk!"  
+##  What is Three-Way Handshake?
+It’s the process used by **TCP (Transmission Control Protocol)** to **establish a reliable connection** between two devices before sending data.
 
-*NOW data flows safely!*   
+## Steps
+
+1. **SYN (Synchronize)**  
+   The client sends a request to the server to start a connection.
+
+2. **SYN-ACK (Synchronize + Acknowledge)**  
+   The server replies that it’s ready and acknowledges the client’s request.
+
+3. **ACK (Acknowledge)**  
+   The client confirms the server’s response, and the connection is established.
+
+## Example
+When you open a website:
+- Your computer → sends SYN  
+- Server → replies with SYN-ACK  
+- Your computer → sends ACK  
+
+Now the connection is **ready to transfer data** safely.
+
+---
+
+**In short:**
+- **NTP** keeps network time accurate.  
+- **Three-way handshake** creates a safe and reliable connection between two devices.
 
 ---
 
