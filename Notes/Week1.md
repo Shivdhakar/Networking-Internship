@@ -1,121 +1,81 @@
-
 # Networking Internship Notes
 
 ## Day 1: Networking Basics
+**What I Learned:**
 
-**Topics **
+**Networking?**  
+Just computers talking to each other! 
 
-- **Networking?**  
-  Understanding the fundamental definition and purpose.
+**Main Parts:**  
+- Cables, switches, routers (hardware)  
+- Software that makes it work  
 
-- **Components of Networking:**  
-  Key hardware and software involved in networks.
+**Shapes (Topologies):**  
+- **Star** - Everything connects to center (like my home WiFi)  
+- **Bus** - All in one line  
+- **Ring** - Circle  
+- **Mesh** - Everyone connected to everyone  
 
-- **Network Topologies:**  
-  - Star  
-  - Bus  
-  - Ring  
-  - Mesh  
+**Network Types:**  
+- **PAN** - My phone + earbuds  
+- **LAN** - Office WiFi  
+- **MAN** - City networks  
+- **WAN** - Internet!  
 
-- **Types of Networks:**  
-  - PAN (Personal Area Network)  
-  - LAN (Local Area Network)  
-  - MAN (Metropolitan Area Network)  
-  - WAN (Wide Area Network)  
+**How Data Moves:**  
+Send → Receive → Done  
 
-- **Basic Network Flow:**  
-  How data travels across networks.
-
-- **Common Network Challenges:**  
-  - Unauthorized Access  
-  - Data Breach  
-  - Viruses  
-
-- **Network Performance Issues:**  
-  - Network Congestion  
-  - Connection Reliability  
-  - Bandwidth Limitations  
-
-
-## Day 2:
-
-### Learning Focus:
-Understanding differences between LAN, MAN, WAN and designing network architecture.
-
-### Network Planning Scenario:
-
-**Client:** EduTech Solutions — an educational software company
-
-- **Main Office:** 100 employees, downtown  
-- **Development Center:** 50 employees, 5 km away  
-- **Regional Sales Offices:** 3 locations across the state  
-- **Remote Workers:** 25 employees working from home  
-
-
-
-## Day 3: Understanding MAC and IP Addresses
-
-### Network Addresses Overview
-
-- **MAC Address (Physical Address):**  
-  - Hardcoded into the Network Interface Card (NIC)  
-  - Unique worldwide identifier  
-  - 48-bit (6 pairs of hexadecimal digits)  
-  - Operates at Layer 2 (Data Link Layer)  
-  - Non-routable beyond local network segment  
-
-- **IP Address (Logical Address):**  
-  - Assigned by network configuration (manual or DHCP)  
-  - Composed of Network and Host portions  
-  - IPv4 is 32-bit (4 decimal groups from 0-255)  
-  - Operates at Layer 3 (Network Layer)  
-  - Routable across different networks  
+**Problems:**  
+- Hackers stealing stuff  
+- Virus attacks  
+- Slow internet (too many people online)  
 
 ---
 
-### How MAC and IP Work Together
+## Day 2: LAN vs WAN  
+**Quick Diff:**  
+- **LAN** = Small (office)  
+- **WAN** = Big (whole city/internet)  
 
-- MAC identifies devices locally within a LAN.  
-- IP allows devices to communicate across different networks.
+**My Scenario:**  
+EduTech company needs network:  
+- Main office (100 ppl)  
+- Dev center (50 ppl, 5km away)  
+- 3 sales offices  
+- 25 home workers  
+
+*Gonna design this soon!*  
 
 ---
 
-### Packet Transmission & ARP
+## Day 3: MAC & IP Addresses  
+**MAC Address:**  
+- Phone's real name (stuck in hardware)  
+- Looks like: AA:BB:CC:DD:EE:FF  
+- Only works in same room  
 
-- Packets are data units sent from source to destination.  
-- Address Resolution Protocol (ARP) translates IP addresses to MAC addresses within local networks.
+**IP Address:**  
+- Internet name (changes)  
+- Looks like: 192.168.1.1  
+- Works anywhere online  
 
-### IP Addressing Summary
+**How They Team Up:**  
+IP = "Send to this house"  
+MAC = "Give to this person inside"  
 
-1. **What is an IP Address?**  
-   A unique digital address for a device enabling communication.
+**ARP Magic:**  
+IP → MAC translator for local network  
 
-2. **Types of IP Addresses:**
-3. 
-Public IP  
-Private IP 
+**IP Types:**  
+- **Public** = Internet address  
+- **Private** = Home WiFi (192.168.x.x)  
 
-4. **IP Classes and Private Ranges:**  
-   Networks are divided to organize, allocate, and route IPs efficiently.
+**My Home Setup:**  
+ISP gives router public IP  
+Router gives me private IP  
+NAT hides my private IP online  
 
-5. **Why Classes?**  
-   - Match network sizes  
-   - Simplify IP management and routing  
-   - Reserve private IPs for internal use  
+**Without Private IPs?**  
+Everyone fighting for same address = CHAOS!  
 
-6. **Home Wi-Fi Setup:**  
-   - ISP assigns a public IP to your router  
-   - Router assigns private IPs (e.g., 192.168.x.x) to your devices  
-   - Private network connects to the public internet via NAT  
-
-7. **Role of Towers and Routers:**  
-   - Public IPs assigned to these devices by ISP  
-   - Use DHCP to assign private IPs to connected devices  
-   - NAT translates private IPs to public for internet access  
-
-8. **If IPs Were Not Divided:**  
-   - IP conflicts and routing issues would arise  
-   - Internet management and security would be compromised  
-
-
-
+*Finally get it! IPs = addresses, MAC = ID card* 
