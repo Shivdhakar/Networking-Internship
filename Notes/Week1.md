@@ -4,7 +4,7 @@
 
 ##  **Day 1: Networking Basics**
 
-### 💬 What I Picked Up Today:
+###  What I Picked Up Today:
 **Networking?**  
 It's like devices chatting with each other — just like a group chat but for computers and gadgets.
 
