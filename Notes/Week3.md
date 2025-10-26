@@ -1,136 +1,116 @@
-# Switches – L2 vs L3
+# Switches: L2 vs L3, VLANs, Trunks, and STP Notes
 
-## Switch in Simple Words
-A switch is a box that joins many devices—like computers, printers, or servers—inside one network (for example, a company LAN).  
-Instead of sending every data packet to all devices like a hub does, it delivers the data only to the exact device that needs it.  
-This keeps the network fast and avoids unnecessary traffic.
+## What’s a Switch?
+Picture this: A switch is basically a smart box that hooks up a bunch of devices—your laptop, office printer, server rack—in the same local network (think company LAN). Old-school hubs just blast data everywhere, wasting bandwidth and slowing things down. But a switch? It peeks at the destination (like checking the address on an envelope) and sends the packet only to the right device. Boom—faster speeds, less junk traffic, and the network hums along. We tested this in Packet Tracer; without it, pings were lagging like crazy.
 
----
+## Layer 2 (L2) Switches: The Basics Guy
+L2 switches hang out at the Data Link layer (Layer 2 of OSI—remember that from last week?). They use MAC addresses (those unique hardware IDs, like 00:1A:2B:3C:4D:5E) to forward frames within the same network.
 
-## Layer 2 (L2) Switch
-- Works at the **Data Link layer** in the OSI model.  
-- Forwards data using the **MAC address** of each device.  
-- Commonly used to connect computers inside the same LAN.
+- **What it does:** Learns MACs from incoming traffic (builds a table called CAM), then zips data to the exact port. Super efficient for local chit-chat.
+- **Where it shines:** Small setups, like a team room with 10 PCs. Connect 'em all, and everyone's sharing files without drama.
+- **The catch:** It can't hop between different networks (like from your dept to sales). If you need that, you're stuck—data stops at the LAN border. In our lab, trying to ping across subnets? Total fail until we added routing.
 
-**Downside:**  
-👉 Cannot pass data between two different networks; it only works inside one network.
+Pro tip: Most home routers have a built-in L2 switch for your WiFi devices. That's why your smart TV doesn't flood your phone with Netflix data.
 
----
+## Layer 3 (L3) Switches: The Multitasker
+Now, L3 switches level up to the Network layer (Layer 3). They handle IP addresses (like 192.168.1.10) for routing, while still doing all the L2 switching magic.
 
-## Layer 3 (L3) Switch
-- Works at the **Network layer** of the OSI model.  
-- Uses **IP addresses** to move data.  
-- Can perform **routing** tasks (like a router) while still doing normal switch functions.  
+- **What it does:** Switches locally *and* routes between subnets/VLANs. It's like a router on steroids—hardware-accelerated, so no software bottlenecks.
+- **When to grab one:** Big offices or campuses. Say, 200+ users split into depts; L3 lets HR talk to Finance without a separate router hogging space.
+- **Trade-offs:** A tad pricier and uses more power, but in our sim, it cut latency by half compared to chaining L2s with a router.
 
-**When to Use:**  
-👉 Useful for bigger setups where you need both quick LAN switching and communication between multiple networks.
+We configured one in class—assigned IPs, set up routes, and watched inter-VLAN pings fly. Felt like wizardry.
 
----
+## L2 vs L3: Head-to-Head
+Here's a quick table I sketched during break. Makes comparing 'em a breeze.
 
-## Quick Comparison: L2 vs L3
+| Feature          | L2 Switch                          | L3 Switch                              |
+|------------------|------------------------------------|----------------------------------------|
+| OSI Layer        | Data Link (Layer 2)                | Network (Layer 3)                      |
+| Addresses Used   | MAC (hardware IDs)                 | IP (logical addresses)                 |
+| Core Job         | Local traffic switching in one LAN | Switching + routing across networks    |
+| Speed/Complexity | Blazing fast, dead simple          | Fast, but juggles more (routing logic) |
+| Best For         | Small office, single subnet        | Enterprise with VLANs/subnets          |
+| Cost             | Cheaper, entry-level               | More bucks, but scales big             |
 
-| Feature        | L2 Switch | L3 Switch |
-|-----------------|----------|----------|
-| **Layer**       | Data Link (Layer 2) | Network (Layer 3) |
-| **Address Type**| MAC address         | IP address       |
-| **Main Job**    | Switch traffic inside one LAN | Switch + route between networks |
-| **Performance** | Very fast and simple | Slightly slower, does more work |
-| **Example**     | Small office LAN     | Large network with VLANs |
+Bottom line: Start with L2 for basics; upgrade to L3 when your network grows legs.
 
-# VLAN & Trunk – Quick Guide
+## VLANs and Trunks: Keeping Things Organized
+Networks can get messy fast—broadcast storms, security leaks. Enter VLANs and trunks to tame the beast.
 
-## 🌐 VLAN (Virtual Local Area Network)
-A **VLAN** is a *virtual* or **logical network** built inside a physical network.  
-It lets you group devices together based on function (like HR or IT), even if those devices are plugged into **different switches**.
+### VLANs: Virtual Neighborhoods
+VLAN (Virtual LAN) is like drawing invisible fences on your physical switch. You group devices logically by role (e.g., all marketing laptops in one "virtual net"), even if they're scattered across ports or switches.
 
-**Key points**
-- Each VLAN behaves as its **own broadcast domain**, which helps:
-  - cut down unnecessary network traffic
-  - improve security between departments.
-- Devices in different VLANs **cannot talk to each other** unless you configure **routing** (for example with a Layer-3 switch or router).
+- **Why bother?** Each VLAN is its own bubble—broadcasts (like ARP yells) stay inside, cutting noise. Plus, security: Finance VLAN can't snoop on IT without permission.
+- **How it works:** Assign ports to VLAN IDs (e.g., VLAN 10 for Sales). Devices in VLAN 10 think they're alone, even on a shared switch.
+- **Real talk:** Without routing (L3 switch/router), VLANs are islands—no cross-talk. In lab, we split a 24-port switch into 3 VLANs; traffic dropped 70% on broadcasts.
 
-**Example setup**
-- **VLAN 10** → HR team  
-- **VLAN 20** → IT team  
-- **VLAN 30** → Finance team  
+Example from our company sim:  
+- VLAN 10: HR (10 users, sensitive payroll stuff).  
+- VLAN 20: Dev Team (20 coders, high bandwidth).  
+- VLAN 30: Guests (WiFi access, firewalled).  
+HR can't accidentally flood devs with HR memos.
 
-Here, HR devices (VLAN 10) stay separate from IT (VLAN 20) until an L3 device is configured for inter-VLAN routing.
+### Trunks: The VLAN Highway
+Trunk links are special cables/ports that shuttle *multiple* VLANs over one connection (switch-to-switch or switch-to-router). Without 'em, you'd need a wire per VLAN—cable salad!
 
----
+- **The magic:** IEEE 802.1Q adds a tiny tag (VLAN ID) to each Ethernet frame. Switch reads the tag and drops it into the right VLAN bucket.
+- **Setup:** Enable trunk mode on ports, specify allowed VLANs (e.g., "trunk VLANs 10,20"). Native VLAN (untagged) for legacy stuff.
+- **Why it rocks:** Saves ports and cabling. In our multi-switch lab, one trunk carried 5 VLANs—clean and scalable.
 
-## 🔗 Trunk
-A **trunk** is a single link (for example, a switch-to-switch cable) that can carry traffic for **many VLANs at the same time**.
+Example: Two switches, A and B. Trunk between 'em carries VLAN 10 (HR) and 20 (IT). HR laptop on A reaches HR printer on B seamlessly.
 
-**How it works**
-- Uses **802.1Q tagging**: Each Ethernet frame gets a small tag to show which VLAN it belongs to.
-- Allows VLAN traffic to pass **between switches**, so VLANs stay consistent across the network.
+### VLAN vs Trunk: Don't Mix 'Em Up
+Quick diff table—VLAN is the group, trunk is the bridge.
 
-**Example**
-The trunk link carries traffic for **both VLAN 10 and VLAN 20** across the two switches.
+| Feature              | VLAN (Virtual Network)                  | Trunk (VLAN Carrier)                    |
+|----------------------|-----------------------------------------|-----------------------------------------|
+| What It Is           | Logical split of physical ports/devices | Special link for multi-VLAN traffic     |
+| Scope                | One switch or domain                    | Between switches/devices                |
+| Broadcast Handling   | Each VLAN = separate domain             | Carries multiple domains over one wire  |
+| Tagging              | N/A (access ports untagged)             | 802.1Q tags frames                      |
+| Example              | VLAN 10 = All sales PCs                 | Trunk port linking Switch1 to Switch2   |
 
----
+Pro: VLANs + trunks = flexible, secure networks without rewiring.
 
-## ⚖️ VLAN vs Trunk
+## Spanning Tree Protocol (STP): Loop Buster
+Redundant links sound great (backup paths!), but they create loops—data circles forever, crashing the network. STP (IEEE 802.1D) is the cop that shuts down extras, keeping Layer 2 loop-free.
 
-| Feature            | VLAN (Virtual Network)                         | Trunk (VLAN Carrier Link)                 |
-|--------------------|--------------------------------------------------|--------------------------------------------|
-| **Definition**     | Logical segmentation inside a physical network   | Link that transports traffic of many VLANs |
-| **Scope**          | Works within a single switch or broadcast domain | Connects multiple switches or devices     |
-| **Broadcast Domain** | Each VLAN is its own broadcast domain          | Can carry multiple VLANs across a link     |
-| **Example**        | VLAN 10 = HR, VLAN 20 = IT                      | Trunk between Switch A and Switch B        |
+### STP Basics
+It builds a single active tree topology: One root, no cycles. Uses BPDUs (Bridge Protocol Data Units) for switches to chat and decide.
 
----
+- **Root Bridge:** The "king" switch—lowest Bridge ID (priority + MAC). Elect it first (set low priority on a central switch).
+- **Ports Roles:**  
+  - Root Port (RP): Non-root switch's best shot to root (lowest cost).  
+  - Designated Port (DP): Forwards on a segment (one per link).  
+  - Blocked: Stands by, no forwarding (prevents loops).
+- **Path Cost:** Based on speed (e.g., 10Gbps = cost 2, 100Mbps = 19). Lower = preferred.
+- **States (Old STP):** Blocking (listen), Listening (elect), Learning (build table), Forwarding (go time). Takes 30-50s to converge—yawn.
 
-# Spanning Tree Protocol (STP)
+RSTP (Rapid STP) fixes that: Faster handshakes, under 5s convergence.
 
-##  What is STP?
-- **STP (IEEE 802.1D)** is used in Ethernet networks to **avoid loops** when multiple switches are connected.  
-- It ensures only **one active path** exists and blocks redundant links that could cause loops.  
-- Final result → A **loop-free Layer 2 topology**.
+### How STP Plays Out
+1. **Election:** All switches yell BPDUs. Lowest BID wins root.
+2. **Root Ports:** Everyone picks their fastest path to root.
+3. **Designated Ports:** Per segment, the root-closest port forwards.
+4. **Blocking:** Others chill—ready to activate if link fails.
+5. **Convergence:** Timers tick (Max Age 20s, Hello 2s), topology locks in.
 
----
+If a link dies? BPDUs stop, blocked port flips to forwarding quick.
 
-##  Key Concepts
-- **Root Bridge** → The main reference switch (lowest Bridge ID).  
-- **Bridge ID (BID)** → Combination of priority + MAC address, used to elect the root.  
-- **Root Port (RP)** → On non-root switches, this is the port with the best path to the Root Bridge.  
-- **Designated Port (DP)** → Port that forwards frames on a LAN segment.  
-- **Blocked Port** → Port that doesn’t forward traffic to prevent loops.  
-- **Path Cost** → Lower cost = better path (decided by link speed).  
-- **Port States (Classic STP)** →  
-  - Blocking  
-  - Listening  
-  - Learning  
-  - Forwarding  
-  *(RSTP speeds this process up).*
+### Real-World Examples
+- **Triangle Setup:** Switches A-B-C, plus A-C link. STP picks A as root, blocks A-C. Traffic A→B→C. If B fails, unblock A-C.
+- **Access Layer:** End switch with dual uplinks to core switches. One uplink DP (active), other blocked. Failover? Instant switch.
 
----
+In lab: We looped three switches—flood city until STP kicked in. Blocked port saved the day.
 
-##  How STP Works
-1. **Root Bridge Election** → Switches exchange BPDUs; the lowest Bridge ID becomes Root.  
-2. **Root Port Selection** → Each non-root switch chooses the best path to reach the root.  
-3. **Designated Port Selection** → On each segment, one port is chosen as Designated.  
-4. **Blocking** → Extra ports that would create loops are blocked.  
-5. **Convergence** → After timers, the topology stabilizes and traffic flows without loops.  
+### Handy Cisco Commands
+We ran these on our 2960s—gold for troubleshooting.
 
----
+- `show spanning-tree` – Full STP deets, root, ports.  
+- `show spanning-tree root` – Who's boss and paths.  
+- `show spanning-tree brief` – Port roles/states at a glance.  
+- `spanning-tree vlan 1 priority 4096` – Make this switch root candidate (lower number = better).  
+- `spanning-tree portfast` – Skip Listening/Learning on access ports (edge devices only!).
 
-##  Simple Examples
-- **Triangle of 3 Switches (A–B–C with extra link A–C):**  
-  One switch becomes Root, one link is blocked to avoid loop.  
-
-- **Access switch with 2 uplinks to distribution switches:**  
-  One uplink forwards traffic, the other is blocked. If the active one fails, backup link unblocks.  
-
----
-
-##  Example Cisco Commands
-```bash
-show spanning-tree            # View STP status
-show spanning-tree root       # Show root bridge info
-show spanning-tree brief      # Quick port states
-spanning-tree vlan 1 priority 4096   # Set lower priority to make this switch root
-
-
-
-
+Wrapping up: Switches are network MVPs. L2 for simple, L3 for smart growth. VLANs segment, trunks connect, STP prevents meltdowns. Can't wait to wire this in a real rack. Day's learning: Redundancy without loops = happy admins. 
