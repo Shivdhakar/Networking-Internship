@@ -172,3 +172,10 @@ DSL sim — speed varied by load; cable test showed shared lag during peaks.
 Pick your WAN based on need — all roads lead to connectivity.  
 Next up: **SD-WAN deep dive! **
 
+# References
+
+**Day 1** - [ACL](https://claude.ai/public/artifacts/bd93a197-c4e7-4055-8fb8-244f36c6d823)  
+
+**Day 2** - [LAN Switching](https://claude.ai/public/artifacts/c07e6c2a-f9ae-4abd-a263-adb67b666bc9)  
+
+
