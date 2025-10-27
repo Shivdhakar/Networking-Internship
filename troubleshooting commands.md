@@ -4,6 +4,8 @@
 ##  Networking Basics
 
 
+
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `ping <IP>` | Check connectivity | Tests if a device is reachable and measures response time. |
@@ -14,7 +16,13 @@
 
 
 
+
+
+
 ##  Types of Networking (LAN, WAN, MAN)
+
+
+
 
 
 
@@ -27,7 +35,15 @@
 
 
 
+
+
+
+
 ##  OSI Model
+
+
+
+
 
 | Layer | Function | Example/Tool |
 |--------|-----------|---------------|
@@ -38,6 +54,10 @@
 | Session | Connection setup | Remote login |
 | Presentation | Data format conversion | Encryption, compression |
 | Application | User interaction | Browser, email client |
+
+
+
+
 
 
 ##  TCP/IP Model
