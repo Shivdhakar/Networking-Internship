@@ -104,19 +104,19 @@ ip routing
 exit
 
  Step 6: Create SVIs (Switch Virtual Interfaces)
-configure terminal
+```configure terminal
 interface vlan 10
  ip address 192.168.10.1 255.255.255.0
  no shutdown
 exit
-
+```
 interface vlan 20
  ip address 192.168.20.1 255.255.255.0
  no shutdown
 exit
 
  Step 7: Configure PCs (Manually)
-
+```
 PC1 Configuration
 
 IP Address: 192.168.10.10
@@ -130,7 +130,7 @@ IP Address: 192.168.20.10
 Subnet Mask: 255.255.255.0
 Gateway: 192.168.20.1
 
-
+```
  Step 8: Save Configuration
 write memory
 
@@ -144,7 +144,7 @@ show running-config       ! Confirm SVIs and 'ip routing' are configured
  On PCs
 
 From PC1:
-
+```
 ping 192.168.10.1     ! Ping local gateway (should reply)
 ping 192.168.20.10    ! Ping PC2 across VLANs (should reply if routing works)
 
