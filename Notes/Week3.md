@@ -113,4 +113,4 @@ We ran these on our 2960s—gold for troubleshooting.
 - `spanning-tree vlan 1 priority 4096` – Make this switch root candidate (lower number = better).  
 - `spanning-tree portfast` – Skip Listening/Learning on access ports (edge devices only!).
 
-Wrapping up: Switches are network MVPs. L2 for simple, L3 for smart growth. VLANs segment, trunks connect, STP prevents meltdowns. Can't wait to wire this in a real rack. Day's learning: Redundancy without loops = happy admins. 
+Wrapping up: Switches are network MVPs. L2 for simple, L3 for smart growth. VLANs segment, trunks connect, STP prevents meltdowns. Can't wait to wire this in a real rack. 
