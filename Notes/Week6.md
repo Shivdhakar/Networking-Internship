@@ -186,4 +186,9 @@ Replies come back to router → router maps back to private host.
 
 All four form the **foundation of modern networking** — and every IT or network admin must master them.
 
-*Next up:* VLANs and Subnets — where segmentation gets spicy. 🔥
+*Next up:* VLANs and Subnets — where segmentation gets spicy. 
+
+# References
+
+**Day 1** - [DHCP](https://claude.ai/public/artifacts/cab20ca6-7445-4439-880e-78db376be78c) 
+**Day 2** - [NAT/PAT](https://claude.ai/public/artifacts/553de791-6828-4740-becf-0fb4af7e53b7)  
