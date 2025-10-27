@@ -2,8 +2,7 @@
 
 ## Access Control Lists (ACLs): The Net's Bouncer
 
-**ACLs** are firewall-lite rules on routers/switches to filter traffic—permit/deny packets by criteria. Layer 3/4 focus (IP, ports), but extendable.  
-Think of it like a club list: “Let in HTTP, boot hackers.”
+**ACLs are rules used in routers and switches to control which network traffic is allowed or denied. Think of them like security guards standing at the entrance of a building, deciding who can go in or out. Each rule in an ACL defines conditions based on factors like IP address, protocol type, or port number. When data packets arrive at a device, the ACL checks each packet against its list of rules and either permits or blocks it accordingly. There are two main types of ACLs: Standard ACLs, which filter traffic based only on the source IP address, and Extended ACLs, which can filter based on both source and destination IP, as well as specific ports and protocols (like HTTP or FTP). ACLs help improve network security by preventing unauthorized access, controlling data flow, and reducing unnecessary traffic. For example, you could configure an ACL to block all external users from accessing internal servers, while still allowing employees to connect freely.
 
 ###  ACLs Rule
 - **Security:** Block bad IPs (spoofs, DDoS).  
@@ -38,9 +37,9 @@ Example: Blocked subnet traced denies using wildcard.
 
  **Summary:** ACLs = network’s velvet rope — control without chaos.
 
-## LAN Switching Deep Dive: L2 Ops Unpacked
+## LAN Switching : L2 Ops Unpacked
 
-**Layer 2 switching** works at the Data Link layer—moves frames locally using **MAC addresses**. It’s fast, direct, and local. No routing involved.
+**L2 switching refers to how data is transferred within a local network using MAC addresses. It operates at Layer 2 of the OSI model (the Data Link Layer). A Layer 2 switch doesn’t care about IP addresses—it focuses on the physical addresses (MAC addresses) of devices connected to it. When a device sends data, the switch looks at the destination MAC address and forwards the frame only to the correct port instead of sending it to everyone. This improves performance and security within the local network. L2 switches can also create VLANs (Virtual LANs) to divide a network into smaller, isolated sections—like creating separate lanes for different departments in an office. This helps reduce network congestion and keeps sensitive traffic separate. In short, L2 switching makes communication within a LAN faster, smarter, and more organized by learning where each device is connected and sending data directly to it.
 
 ### Core Gears
 - **MAC Table (CAM):** Learns source MACs → ports. Ages out after ~300s.  
@@ -73,8 +72,8 @@ L2 = local postman delivering right at the door.
 
 ## WAN Technologies: MPLS, Leased Lines, Broadband
 
-**Wide Area Networks (WANs)** connect distant sites — slower and costlier than LANs, but vital for enterprise links.
-
+**Wide Area Networks (WANs)** 
+WAN technologies are the methods and connections used to link multiple local networks across long distances—like connecting branch offices in different cities or countries. While a LAN connects computers within one building, a WAN (Wide Area Network) connects networks over large geographic areas using communication providers like ISPs or telecom companies. Common WAN technologies include MPLS (Multiprotocol Label Switching), Leased Lines, Frame Relay, ATM, and modern solutions like SD-WAN (Software Defined WAN). These technologies use different ways to transmit data, such as fiber optics, satellite links, or wireless communication. The main goal of a WAN is to allow organizations to share data and applications securely across distant locations. For example, a company’s head office in Delhi and branch office in Mumbai can communicate as if they were in the same building, thanks to WAN technology. It ensures reliable, high-speed connectivity for remote users and supports the backbone of corporate and global communications.
 ### MPLS: Label Magic for Traffic
 
 **MPLS (Multiprotocol Label Switching)** = Layer 2.5 hybrid.  
