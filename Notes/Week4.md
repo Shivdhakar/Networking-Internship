@@ -1,10 +1,8 @@
 # Networking Internship Notes STP, Routing, and RIP Days
 
----
-
 ## Day 1 Spanning Tree Protocol STP – Avoiding Infinite Loops
 
-STP is a key protocol that prevents loops in Ethernet networks. It follows IEEE 802.1D standards and ensures there are no endless data cycles that could flood and crash the network.
+STP is a network protocol used to prevent loops in a Layer 2 (switch-based) network. When multiple switches are connected together in a network, sometimes redundant links are added for backup. These backup paths are useful for reliability, but they can also create loops — meaning data packets keep circulating endlessly between switches. This can slow down or even crash the entire network. STP solves this by automatically detecting and blocking extra paths that could cause loops, leaving only one active path for communication. If the main path fails, STP quickly activates one of the blocked backup paths to keep the network running smoothly. It works by choosing one switch as the Root Bridge (like the main reference point) and then calculating the best path to it. In short, STP ensures that switches are connected efficiently without creating endless data loops, keeping the network stable and reliable.
 
 ### Why We Use STP
 - Stops loops at Layer 2 to prevent data from endlessly circulating.  
@@ -52,12 +50,9 @@ Traditional STP takes 30 to 50 seconds to converge. RSTP reduces it to less than
 ### Example Triangle Topology
 With three switches A, B, and C connected in a loop, packets can travel endlessly. STP selects A as the root and blocks one redundant link, creating a loop-free structure. If a link fails, STP reactivates the backup within seconds.
 
-
----
-
 ## Day 2 Routing Basics – How Data Finds Its Way
 
-Routing operates at Layer 3 of the OSI model. It determines the best path for data packets to reach their destination across networks.
+Routing is the process of finding the best path for data to travel from one network to another. Routers are the devices responsible for routing—they act like traffic managers that guide data packets toward their destination. Each router stores information in a routing table, which tells it which path or next hop to use for specific destinations. There are two main types of routing: Static Routing and Dynamic Routing. In static routing, routes are manually set by a network administrator, which works well for small and stable networks. In dynamic routing, routers automatically share information and update their routes using routing protocols like OSPF, EIGRP, or BGP. Routing is essential for communication between different networks, ensuring that data takes the most efficient path and reaches its target safely. Without routing, computers in different networks or locations wouldn’t be able to talk to each other.
 
 ### Real World Example
 Think of packets as cars, routers as intersections, and routing tables as maps. Just like a GPS avoids traffic jams, routers choose the fastest or most efficient route for data.
@@ -104,27 +99,25 @@ If no route matches, the packet is dropped.
 Example A company with offices in Bangalore and Delhi connected both LANs using OSPF. The result was seamless communication between sites.
 
 
-
----
-
 ## Day 3 Intra and Interdomain Routing and RIP Protocol
 
 Dynamic routing can be divided into two major types Intra and Interdomain routing.
 
 ### Intra vs Interdomain
 
-- **Intradomain IGP** Operates within one organization’s network using protocols like RIP, OSPF, or EIGRP.  
-- **Interdomain EGP** Connects multiple organizations or ISPs using BGP.  
+- **Intradomain IGP**
+- Interdomain routing is the process of exchanging routing information between different organizations or networks, known as Autonomous Systems (AS). Each AS is a large network managed by a single organization, such as an Internet Service Provider (ISP), a university, or a large company. Since the Internet is made up of thousands of these independent systems, they need a way to communicate and share route information so data can travel from one network to another across the world. This is where Interdomain Routing comes in. The main protocol used for this purpose is BGP (Border Gateway Protocol), which acts like the Internet’s postal service, deciding how data should move between different networks. Interdomain routing focuses on policy-based routing rather than just shortest paths. For example, an ISP may choose a route based on cost, reliability, or a business agreement with another provider. In short, Interdomain Routing connects big networks together and forms the backbone of the Internet.
+-   
+- **Interdomain EGP**
+- Intradomain routing happens within a single organization or Autonomous System. Unlike interdomain routing, which connects large, separate networks, intradomain routing focuses on managing traffic inside one company or internal network. The goal is to make sure all devices within that network can communicate efficiently and automatically find the best path for data. Common Intradomain Routing Protocols include OSPF (Open Shortest Path First), EIGRP (Enhanced Interior Gateway Routing Protocol), and RIP (Routing Information Protocol). These protocols help routers inside the organization learn about each other’s connections and update routes when changes happen, such as a link failure. For example, in a company with multiple departments connected by routers, intradomain routing ensures data can move smoothly from the HR router to the Finance router without needing any manual configuration. In simple words, intradomain routing manages internal communication, while interdomain routing connects that internal network to the outside world. 
 
 Analogy Intradomain is like local city traffic, while Interdomain is the highway between cities.
 
 Small organizations use IGP while ISPs rely on BGP for larger control.
 
----
-
 ### RIP Routing Information Protocol
 
-RIP is an intradomain distance vector protocol. It calculates the best path based on hop count. The maximum hop limit is 15; anything beyond that is unreachable.
+RIP is one of the oldest and simplest dynamic routing protocols used in networks. It helps routers automatically learn and share routes with each other so that data can reach the right destination. RIP works by counting hops — the number of routers data must pass through to reach its target. The path with the fewest hops is chosen as the best route. However, RIP has a limitation: it can only count up to 15 hops, which means it’s best suited for small networks. Every 30 seconds, routers using RIP send updates to their neighbors to share their routing tables. While this makes RIP easy to configure, it also means it converges slowly compared to newer protocols like OSPF or EIGRP. Despite being older, RIP is still useful for learning and understanding the basic concepts of dynamic routing.
 
 **Key Features**
 - Metric based on hop count only.  
@@ -133,7 +126,6 @@ RIP is an intradomain distance vector protocol. It calculates the best path base
 
 RIP does not consider bandwidth or delay—just hop numbers.
 
----
 
 ### RIP Version Comparison
 
@@ -147,7 +139,6 @@ RIP does not consider bandwidth or delay—just hop numbers.
 
 RIPv2 is widely used because it is more efficient and secure.
 
----
 
 ### How RIP Works
 1. Each router knows its directly connected networks.  
@@ -163,8 +154,6 @@ RIPv2 is widely used because it is more efficient and secure.
 - Flush 240 seconds  
 
 If a route update is missed, the route eventually expires and is removed.
-
----
 
 ### When to Use RIP
 Best for small networks with fewer than 15 routers.  
