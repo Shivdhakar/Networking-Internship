@@ -213,7 +213,6 @@ Added `no-export` community to stop external leaks.
 - **BGP:** Internet’s diplomat — massive scale & policy control  
 
 **Together, they power every layer of routing — from small LANs to the global Internet.**  
-Next stop: MPLS and VPN tunnels — the backbone magic.
 
 # References
 
