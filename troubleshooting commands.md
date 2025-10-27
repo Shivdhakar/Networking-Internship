@@ -3,6 +3,7 @@
 
 ##  Networking Basics
 
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `ping <IP>` | Check connectivity | Tests if a device is reachable and measures response time. |
@@ -12,7 +13,10 @@
 | `netstat` | View network connections | Shows active connections and listening ports. |
 
 
+
 ##  Types of Networking (LAN, WAN, MAN)
+
+
 
 | Type | Use | Description |
 |------|-----|-------------|
