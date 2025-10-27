@@ -12,8 +12,6 @@ Now scale that to 50+ devices in an office — chaos! DHCP swoops in to auto-ass
 Big networks depend on it — plug in and connect instantly.  
 In our lab, without DHCP = devices lost; with DHCP = instant online.
 
----
-
 ###  DHCP’s Dual Table Trick
 
 DHCP handles two main styles — static and dynamic — like a reservation list.
@@ -39,8 +37,6 @@ DHCP handles two main styles — static and dynamic — like a reservation list.
 
 We saw this live — a phone got `10.0.0.5` on boot, and boom, connected.
 
----
-
 ###  Core Components
 
 - **Server:** The boss. Holds IP pool, leases IPs, gateway, DNS.  
@@ -49,8 +45,6 @@ We saw this live — a phone got `10.0.0.5` on boot, and boom, connected.
 - **Lease:** Time-limited usage. Expires and returns to pool.
 
 **Example:** Pool `192.168.1.100–200`, lease = 1 day → 20 clients joined automatically.
-
----
 
 ###  DORA: The 4-Step IP Dance
 
@@ -67,8 +61,6 @@ DHCP uses **DORA** for automatic configuration:
 
 Captured in **Wireshark**, DORA looked like a 4-step handshake in action.
 
----
-
 ###  Assignment Flavors
 
 - **Dynamic:** Temporary pool IP (most common).  
@@ -77,20 +69,12 @@ Captured in **Wireshark**, DORA looked like a 4-step handshake in action.
 
 Dynamic is the go-to — perfect for mobile or temporary connections.
 
----
-
 ###  Lease Renewal: T1, T2 & Expiry
 
 1. **T1 (50%)** → Client quietly asks to renew lease.  
 2. **T2 (87.5%)** → No reply? Broadcasts to all servers.  
 3. **Expiration** → Lease gone, restart DORA.
 
----
-
- *Lab Capture:* Wireshark DORA trace — showed DISCOVER → OFFER → REQUEST → ACK clearly.  
- *Takeaway:* DHCP = Plug & Play networking. Without it = network chaos.
-
----
 
 ##  NTP: The Clock Sync Squad
 
@@ -112,7 +96,6 @@ Level 1 (Atomic Clock) → Level 2 → Clients.
 **Lab Result:** Our VM synced to `pool.ntp.org`, corrected a 2-second drift.  
 Without NTP, authentication (SSL/TLS) breaks easily.
 
----
 
 ##  TCP 3-Way Handshake: Building Trust
 
@@ -127,7 +110,6 @@ In our lab, missing a SYN meant **no connection** — TCP doesn’t compromise o
 
  **Tools Used:** `tcpdump`, Wireshark → saw SYN → SYN-ACK → ACK in real-time.
 
----
 
 ##  NAT & PAT: IP Masquerade Masters
 
@@ -144,8 +126,6 @@ Replies come back to router → router maps back to private host.
 - Add a security layer (hide internal IPs).  
 - Simplify public-facing infrastructure.
 
----
-
 ###  Types of NAT
 
 | Type | Description | Example |
@@ -156,8 +136,6 @@ Replies come back to router → router maps back to private host.
 
 **PAT** is the real MVP — allows 100s of users behind one public IP by mapping unique port numbers.
 
----
-
 ###  Real-World Uses
 
 - **Corporate Web Access:** 100 employees share 5 public IPs via PAT.  
@@ -167,8 +145,6 @@ Replies come back to router → router maps back to private host.
 - **Development Labs:** Use fake private IPs to simulate production.
 
 **Lab:** Configured 5 VMs under one public IP using PAT — checked via router logs. No conflicts!
-
----
 
 ##  Mix-Up
 
