@@ -149,6 +149,6 @@ Networking = Gadgets chatting with each other. Simple!
 
 ---
 **Day 1** - [Networking Basics](https://claude.ai/public/artifacts/e92959cb-3269-4546-b97d-e5dcd0aee458)  
-**Day 2** - [LAN vs WAN](https://claude.ai/public/artifacts/e92959cb-3269-4546-b97d-e5dcd0aee458)  
-**Day 3** - [MAC & IP Addresses](https://claude.ai/public/artifacts/e92959cb-3269-4546-b97d-e5dcd0aee458)
+**Day 2** - [Types of Networking](https://claude.ai/public/artifacts/f4b54e55-0e65-4185-8eb1-4ecbebbdf880)  
+
 
