@@ -30,12 +30,13 @@ Switch1 → Router G0/0
 Switch2 → Router G0/1
 
 # Step 2: Assign IPs
+```
 Device	IP Address	Subnet Mask	Gateway
 PC1	192.168.10.10	255.255.255.0	192.168.10.1
 PC2	192.168.10.11	255.255.255.0	192.168.10.1
 PC3	192.168.20.10	255.255.255.0	192.168.20.1
 PC4	192.168.20.11	255.255.255.0	192.168.20.1
-
+```
 Configure each PC: Desktop → IP Configuration
 
 # Step 3: Router Configuration
