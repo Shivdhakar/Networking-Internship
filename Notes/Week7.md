@@ -38,8 +38,6 @@ Example: Blocked subnet traced denies using wildcard.
 
  **Summary:** ACLs = network’s velvet rope — control without chaos.
 
----
-
 ## LAN Switching Deep Dive: L2 Ops Unpacked
 
 **Layer 2 switching** works at the Data Link layer—moves frames locally using **MAC addresses**. It’s fast, direct, and local. No routing involved.
@@ -53,8 +51,6 @@ Example: Blocked subnet traced denies using wildcard.
 - **Collision Domains:** Each port = one domain.  
 - **Broadcast Domains:** Each VLAN = one domain.
 
-**Lab:**  
-`show mac address-table` — watched entries build dynamically on pings.
 
 ### Operation Steps
 1. **Learn:** Records source MAC and port.  
@@ -75,13 +71,9 @@ Example: Blocked subnet traced denies using wildcard.
 Flood storm before learning — chaos. Once MAC learned — instant calm.  
 L2 = local postman delivering right at the door.
 
----
-
 ## WAN Technologies: MPLS, Leased Lines, Broadband
 
 **Wide Area Networks (WANs)** connect distant sites — slower and costlier than LANs, but vital for enterprise links.
-
----
 
 ### MPLS: Label Magic for Traffic
 
@@ -105,7 +97,6 @@ Simulated MPLS VPN — seamless pings between sites. Used `show mpls forwarding`
  **Pros:** High speed, reliability, QoS  
  **Cons:** Complex setup, provider dependency
 
----
 
 ### Leased Lines: Your Private Highway
 
@@ -126,10 +117,6 @@ It’s like renting your own private lane.
 - Expensive  
 - Limited flexibility  
 
-**Lab:**  
-T1 link sim — stable 1.5 Mbps throughput. Perfect for banking or HQ interlinks.
-
----
 
 ### Broadband: Shared Speed Burst
 
@@ -148,10 +135,6 @@ T1 link sim — stable 1.5 Mbps throughput. Perfect for banking or HQ interlinks
 **Pros:** Cheap, fast bursts, easy setup  
 **Cons:** Shared, distance-limited, variable latency
 
-**Lab:**  
-DSL sim — speed varied by load; cable test showed shared lag during peaks.
-
----
 
 ### WAN Trio Comparison
 
@@ -161,9 +144,7 @@ DSL sim — speed varied by load; cable test showed shared lag during peaks.
 | **Leased Line** | 1M–10G (Sym) | $$$ | Excellent | Corporate HQ Links |
 | **Broadband** | 10M–1G (Asym) | Low | Variable | Home / SOHO |
 
----
-
- **Summary**
+ **Short Explnation**
 
 - **MPLS** = Smart cloud (speed + QoS)  
 - **Leased Line** = Private jet (dedicated & secure)  
