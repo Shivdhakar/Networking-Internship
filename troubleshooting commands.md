@@ -183,9 +183,5 @@
 | `show interfaces status` | Interface overview | Displays port speed, duplex, and VLAN info. |
 
 
- **Tip for Troubleshooting:**
-- Always **ping and trace** first to isolate connectivity issues.  
-- Use `show` commands before changing configurations.  
-- Save configuration using `write memory` or `copy run start`.
 
 
