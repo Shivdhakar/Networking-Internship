@@ -129,4 +129,6 @@ while the **TCP/IP Model (4 layers)** is a simplified, practical version used in
 | Flexibility | Detailed but complex | Simple and fast |
 | Best Use | Learning and teaching | Real implementation |
 
----
+---# Reference
+**Day 1** - [OSI Model](https://claude.ai/public/artifacts/e43d6790-fe29-45e8-887d-6f24978d1bc2?fullscreen=true)  
+**Day 2** - [TCP/IP Model](https://claude.ai/public/artifacts/a1c59732-03c8-4268-bf63-c8a6b20e8c3c?fullscreen=true)  
