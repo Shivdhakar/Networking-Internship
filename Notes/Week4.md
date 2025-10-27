@@ -52,7 +52,6 @@ Traditional STP takes 30 to 50 seconds to converge. RSTP reduces it to less than
 ### Example Triangle Topology
 With three switches A, B, and C connected in a loop, packets can travel endlessly. STP selects A as the root and blocks one redundant link, creating a loop-free structure. If a link fails, STP reactivates the backup within seconds.
 
-Reference Day 1 STP session completed successfully. Planning to try RSTP next.
 
 ---
 
@@ -104,7 +103,7 @@ If no route matches, the packet is dropped.
 
 Example A company with offices in Bangalore and Delhi connected both LANs using OSPF. The result was seamless communication between sites.
 
-Reference Day 2 Routing Lab. Routing tables now make complete sense.
+
 
 ---
 
