@@ -5,7 +5,7 @@
 **ACLs** are firewall-lite rules on routers/switches to filter traffic—permit/deny packets by criteria. Layer 3/4 focus (IP, ports), but extendable.  
 Think of it like a club list: “Let in HTTP, boot hackers.”
 
-### Why ACLs Rule
+###  ACLs Rule
 - **Security:** Block bad IPs (spoofs, DDoS).  
 - **QoS:** Prioritize VoIP over email.  
 - **Compliance:** Audit trails, segment nets.  
@@ -31,7 +31,7 @@ Think of it like a club list: “Let in HTTP, boot hackers.”
 Inverse subnet masks — `0.0.0.255` means “any last octet.”  
 Example: Blocked subnet traced denies using wildcard.
 
-### Pro Tips
+### Tips
 - Place ACLs **near the source** to save CPU.  
 - Use `show access-lists` to monitor hits.  
 - Secure VTY (Telnet/SSH) access using ACLs.
@@ -169,8 +169,6 @@ DSL sim — speed varied by load; cable test showed shared lag during peaks.
 - **Leased Line** = Private jet (dedicated & secure)  
 - **Broadband** = City bus (cheap, shared)  
 
-Pick your WAN based on need — all roads lead to connectivity.  
-Next up: **SD-WAN deep dive! **
 
 # References
 
