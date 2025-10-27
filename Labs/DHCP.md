@@ -1,4 +1,4 @@
-#  **Lab: DHCP Configuration on Layer-3 Switch**
+#  **Lab: DHCP Configuration **
 
 ##  **Objective**
 Set up a **DHCP server** on a **Layer-3 Switch** to automatically assign IPs to devices in different VLANs.
