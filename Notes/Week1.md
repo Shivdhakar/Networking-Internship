@@ -148,4 +148,6 @@ Networking = Gadgets chatting with each other. Simple!
 **IP = Street address, MAC = Door number. Nailed it!**
 
 ---
-Day 1 [Networking basic ](https://claude.ai/public/artifacts/e92959cb-3269-4546-b97d-e5dcd0aee458).
+Day-1 [Networking basic ](https://claude.ai/public/artifacts/e92959cb-3269-4546-b97d-e5dcd0aee458)
+Day 2- [LAN vs WAN](https://claude.ai/public/artifacts/e92959cb-3269-4546-b97d-e5dcd0aee458)
+Day3 -[MAC & IP Addresses](https://claude.ai/public/artifacts/e92959cb-3269-4546-b97d-e5dcd0aee458)
