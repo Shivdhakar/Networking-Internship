@@ -65,7 +65,7 @@ Defined in **RFC 2328**, fully vendor-neutral.
 
 ---
 
-## ⚙️ Day 2: EIGRP – Cisco Hybrid Hustle
+##  Day 2: EIGRP – Cisco Hybrid Hustle
 
 **EIGRP (Enhanced Interior Gateway Routing Protocol)** — Cisco’s hybrid mix of distance-vector and link-state ideas.  
 Uses the **DUAL** algorithm for ultra-fast recovery and loop-free paths.
@@ -213,4 +213,11 @@ Added `no-export` community to stop external leaks.
 - **BGP:** Internet’s diplomat — massive scale & policy control  
 
 **Together, they power every layer of routing — from small LANs to the global Internet.**  
-Next stop: MPLS and VPN tunnels — the backbone magic! 🚀
+Next stop: MPLS and VPN tunnels — the backbone magic.
+
+# References
+
+**Day 1** - [OSPF](https://claude.ai/public/artifacts/fbf70cac-6f1a-41cf-adcc-6336e3136ab5?fullscreen=true)  
+**Day 2** - [EIGRP](https://claude.ai/public/artifacts/c030298c-25c3-490e-a1ff-eb03eda1f418?fullscreen=true)  
+**Day 3** - [BGP](https://claude.ai/public/artifacts/819e1cd3-57ee-4398-9446-513c3cce9597)
+
