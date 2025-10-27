@@ -52,7 +52,7 @@ PC2 --- Fa0/2 (L3 Switch)
    - If using **only the L3 switch**, connect both PCs directly to the L3 switch access ports.
 
 ### **Step 2: Create VLANs on L3 Switch**
-```bash
+```
 enable
 configure terminal
 vlan 10
@@ -61,12 +61,12 @@ exit
 vlan 20
  name MARKETING
 exit
- Step 3: Assign Switch Ports to VLANs (Access Ports)
+```
+#Step 3: Assign Switch Ports to VLANs (Access Ports)
+
 If PCs are connected directly to the L3 switch:
 
-bash
-Copy code
-interface range fa0/1
+```interface range fa0/1
  switchport mode access
  switchport access vlan 10
 exit
@@ -75,36 +75,35 @@ interface range fa0/2
  switchport mode access
  switchport access vlan 20
 exit
-If using a separate access switch, do this on that access switch instead.
+ ```
 
-🔗 Step 4: Configure Trunk (if Access Switch Used)
+ Step 4: Configure Trunk (if Access Switch Used)
+
 On Access Switch (port toward L3 Switch):
 
-bash
-Copy code
+```
 interface gig0/1
  switchport trunk encapsulation dot1q   ! (if supported)
  switchport mode trunk
 exit
+
+
 On L3 Switch (port toward Access Switch):
 
-bash
-Copy code
 interface gig0/1
  switchport trunk encapsulation dot1q   ! (if supported)
  switchport mode trunk
 exit
- If using a router instead of an L3 switch, configure subinterfaces instead of SVIs.
+```
+
+
 
  Step 5: Enable IP Routing on the L3 Switch
-bash
-Copy code
 configure terminal
 ip routing
 exit
+
  Step 6: Create SVIs (Switch Virtual Interfaces)
-bash
-Copy code
 configure terminal
 interface vlan 10
  ip address 192.168.10.1 255.255.255.0
@@ -115,37 +114,40 @@ interface vlan 20
  ip address 192.168.20.1 255.255.255.0
  no shutdown
 exit
+
  Step 7: Configure PCs (Manually)
+
 PC1 Configuration
 
-nginx
-Copy code
 IP Address: 192.168.10.10
 Subnet Mask: 255.255.255.0
 Gateway: 192.168.10.1
+
+
 PC2 Configuration
 
-nginx
-Copy code
 IP Address: 192.168.20.10
 Subnet Mask: 255.255.255.0
 Gateway: 192.168.20.1
- You may also use DHCP if configured.
+
 
  Step 8: Save Configuration
-bash
-Copy code
 write memory
+
  Verification Commands
  On L3 Switch
-bash
-Copy code
 show vlan brief           ! Verify VLANs exist and ports assigned
 show ip interface brief   ! Check SVI interfaces and IPs
 show ip route             ! See connected routes (192.168.10.0/24, 192.168.20.0/24)
 show running-config       ! Confirm SVIs and 'ip routing' are configured
+
  On PCs
+
 From PC1:
 
 ping 192.168.10.1     ! Ping local gateway (should reply)
 ping 192.168.20.10    ! Ping PC2 across VLANs (should reply if routing works)
+
+
+
+
