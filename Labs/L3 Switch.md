@@ -1,4 +1,4 @@
-#  **Lab: L3 Switch — Inter-VLAN Routing (Student Notes)**
+#  **Lab: L3 Switch — Inter-VLAN Routing **
 
 
 ##  **Objective**
