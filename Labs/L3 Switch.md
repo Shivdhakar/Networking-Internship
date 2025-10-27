@@ -52,7 +52,7 @@ PC2 --- Fa0/2 (L3 Switch)
    - If using **only the L3 switch**, connect both PCs directly to the L3 switch access ports.
 
 ### **Step 2: Create VLANs on L3 Switch**
-
+```bash
 enable
 configure terminal
 vlan 10
