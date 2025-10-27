@@ -1,9 +1,9 @@
 # Networking Notes: DHCP, NTP, Handshake, NAT/PAT
 
 
-##  DHCP: The IP Handout Hero
+##  DHCP:
 
-**DHCP (Dynamic Host Configuration Protocol)** is like your network’s auto-IP distributor.
+**DHCP (Dynamic Host Configuration Protocol)** is like our network’s auto-IP distributor.
 
 Imagine a single laptop on home Wi-Fi — you can manually set the IP.  
 Now scale that to 50+ devices in an office — chaos! DHCP swoops in to auto-assign IPs from a pool, preventing duplicates and admin headaches.
@@ -84,8 +84,6 @@ Dynamic is the go-to — perfect for mobile or temporary connections.
 1. **T1 (50%)** → Client quietly asks to renew lease.  
 2. **T2 (87.5%)** → No reply? Broadcasts to all servers.  
 3. **Expiration** → Lease gone, restart DORA.
-
-We tested this by setting a 5-minute lease — renewal worked flawlessly.
 
 ---
 
@@ -172,12 +170,7 @@ Replies come back to router → router maps back to private host.
 
 ---
 
- *Diagram Ref:* NAT flow — Private ↔ Public translation.  
- *Day 14 Summary:* NAT/PAT = Network chameleons — hide, share, secure.
-
----
-
-##  Wrap-Up
+##  Mix-Up
 
 **DHCP:** Auto IP allocation.  
 **NTP:** Time sync backbone.  
@@ -185,8 +178,7 @@ Replies come back to router → router maps back to private host.
 **NAT/PAT:** IP sharing and protection.
 
 All four form the **foundation of modern networking** — and every IT or network admin must master them.
-
-*Next up:* VLANs and Subnets — where segmentation gets spicy. 
+ 
 
 # References
 
