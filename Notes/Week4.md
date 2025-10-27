@@ -178,4 +178,8 @@ Example A retail company with multiple stores uses RIP to connect routers across
 
 For larger networks, OSPF is preferred due to RIP’s hop limit.
 
-Reference Day 3 RIP and Routing discussion completed. Next goal OSPF hands on configuration.
+# Reference 
+**Day 1** - [STP](https://claude.ai/public/artifacts/83161f5d-1c14-4ed0-8720-8f0c4d1c951b)  
+**Day 2** - [Routing](https://claude.ai/public/artifacts/1921e117-1ea7-41d9-aefb-c5beb03b1c6b)  
+**Day 3** - [RIP](https://claude.ai/public/artifacts/a28f54e1-e72b-4bdd-af38-6201ec24618a)
+
