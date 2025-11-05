@@ -124,8 +124,9 @@ Example A company with offices in Bangalore and Delhi connected both LANs using 
 
 ---
 
-# [Click here to view image]
-## Types of Routing (../Asset/routing.png)
+# [Click here to view image Types of Routing ](../Asset/routing.png)
+
+---
 
 
 
