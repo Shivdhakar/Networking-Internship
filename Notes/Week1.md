@@ -91,7 +91,9 @@ Networking = Gadgets chatting with each other. Simple!
 
 ---
 
-[Click here to view image of types of neworks ](../Assets/types.png)
+[Click here to view image of types of neworks ](../Asset/types.png)
+
+---
 
 
 ##  **Day 3: MAC & IP Addresses (Clicked Finally!)**
