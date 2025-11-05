@@ -102,15 +102,5 @@ If a link dies? BPDUs stop, blocked port flips to forwarding quick.
 - **Triangle Setup:** Switches A-B-C, plus A-C link. STP picks A as root, blocks A-C. Traffic A→B→C. If B fails, unblock A-C.
 - **Access Layer:** End switch with dual uplinks to core switches. One uplink DP (active), other blocked. Failover? Instant switch.
 
-In lab: We looped three switches—flood city until STP kicked in. Blocked port saved the day.
 
-### Handy Cisco Commands
-We ran these on our 2960s—gold for troubleshooting.
-
-- `show spanning-tree` – Full STP deets, root, ports.  
-- `show spanning-tree root` – Who's boss and paths.  
-- `show spanning-tree brief` – Port roles/states at a glance.  
-- `spanning-tree vlan 1 priority 4096` – Make this switch root candidate (lower number = better).  
-- `spanning-tree portfast` – Skip Listening/Learning on access ports (edge devices only!).
-
-Wrapping up: Switches are network MVPs. L2 for simple, L3 for smart growth. VLANs segment, trunks connect, STP prevents meltdowns. Can't wait to wire this in a real rack. 
+# [Click here to view image STP ](../Asset/STP.png)
