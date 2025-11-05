@@ -61,18 +61,42 @@ Think of packets as cars, routers as intersections, and routing tables as maps. 
 - Router Directs packets based on their destination IP.  
 - Routing Table Stores destination networks, next hops, and metrics.  
 
-Example entry  
-- Destination IP 192.168.1.0  
-- Subnet Mask 255.255.255.0  
-- Next Hop 10.0.0.1  
-- Interface Gig0 or 1  
-- Metric Number of hops or cost  
 
-If no route matches, the packet is dropped.
+## Types of Routing
 
-### Types of Routing
-1. Static Routing Manually configured routes, stable but not scalable.  
-2. Dynamic Routing Routers automatically share and update route information using protocols.  
+### Static Routing
+Static routing means we **manually set the route** in the router.  
+The router does not learn automatically — we have to enter the path ourselves.
+
+**Simple meaning:**  
+We give the router a fixed path, like choosing directions manually on Google Maps.
+
+**Best for:** Small networks  
+**Drawback:** Not good for big networks because updating routes manually takes time.
+
+---
+
+### Dynamic Routing
+Dynamic routing means routers **automatically learn and share routes** with each other.  
+They select the best path based on network conditions.
+
+**Simple meaning:**  
+Routers act smart — they talk to each other and find the best route automatically.
+
+**Best for:** Medium and large networks  
+**Advantage:** Auto updates if network changes.
+
+---
+
+### Comparison
+
+| Feature | Static Routing | Dynamic Routing |
+|--------|----------------|----------------|
+| Configuration | Manual | Automatic |
+| Best Use | Small network | Big network |
+| Updates | No auto update | Automatically updates |
+| Control | Full control | Router decides the best path |
+
 
 ### Popular Routing Protocols
 
@@ -97,6 +121,12 @@ If no route matches, the packet is dropped.
 - Can apply security filters using ACLs.  
 
 Example A company with offices in Bangalore and Delhi connected both LANs using OSPF. The result was seamless communication between sites.
+
+---
+
+# [Click here to view image]
+## Types of Routing (../Asset/routing.png)
+
 
 
 ## Day 3 Intra and Interdomain Routing and RIP Protocol
