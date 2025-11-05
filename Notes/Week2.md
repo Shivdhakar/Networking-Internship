@@ -54,6 +54,12 @@ Used for **web browsing, emails, file transfers**, etc.
 **Examples:** HTTP, FTP, SMTP, DNS.
 
 ---
+ 
+
+[Click here to view image osi model](../Asset/osi.png)
+
+
+---
 
 ##  Summary Table
 
