@@ -1,4 +1,4 @@
-# Networking Internship Notes STP, Routing, and RIP Days
+# Networking Internship
 
 ## Day 1 Spanning Tree Protocol STP – Avoiding Infinite Loops
 
