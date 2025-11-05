@@ -1,156 +1,149 @@
 #  Networking Internship Notes
+---
+
+## **Day 1 — Networking Basics**
+
+### What I learned today
+
+**What is Networking?**  
+Networking means connecting computers and devices so they can share information.  
+It's like a group chat — but instead of people, devices talk to each other.
+
+###  Networking Components
+
+#### **Hardware**
+- **Cables** – Carry data between devices (just like wires carry electricity)
+- **Switches** – Connect multiple devices and forward data inside a LAN  
+  _(like a traffic police controlling vehicles)_
+- **Routers** – Connect different networks and send data to the right destination  
+  _(like a postmaster who decides where each letter goes)_
+
+#### **Software**
+Applications and protocols that help data travel across the network.
 
 ---
 
-##  **Day 1: Networking Basics**
-
-###  What I Picked Up Today:
-**Networking?**  
-It's like devices chatting with each other — just like a group chat but for computers and gadgets.
-
----
-
-###  Key Parts:
-**Hardware:**
-- **Cables:** Carry data (like wires in electricity).
-- **Switches:** Direct the data (like traffic police).
-- **Routers:** Sort and send data (like post offices).
-
-**Software:**
-- Apps and programs that help data move from one place to another.
+### Network Topologies (How devices are arranged)
+| Topology | Meaning | Example |
+|---|---|---|
+| **Star** | All devices connect to a central device | Home Wi-Fi setup |
+| **Bus** | All devices share one main cable | Old networks |
+| **Ring** | Devices form a circle and data moves in one direction | Older LAN systems |
+| **Mesh** | Every device connects to every device | Military networks (very reliable) |
 
 ---
 
-###  Network Topologies (Layouts):
-- **Star:** All connect to one hub (like home Wi-Fi router).  
-- **Bus:** All devices in one line (old style).  
-- **Ring:** Data travels in a circle.  
-- **Mesh:** Everyone connects to everyone (strong but costly).
+###  Types of Networks
+| Type | Full Form | Example | Coverage |
+|---|---|---|---|
+| **PAN** | Personal Area Network | Mobile + Bluetooth earbuds | A few meters |
+| **LAN** | Local Area Network | Office / Home network | Building |
+| **MAN** | Metropolitan Area Network | City-wide Wi-Fi | City |
+| **WAN** | Wide Area Network | Internet | Worldwide |
 
 ---
 
-###  Network Sizes:
-| Type | Full Form | Example | Range |
-|------|------------|----------|-------|
-| PAN | Personal Area Network | Phone ↔ Earbuds | Few feet |
-| LAN | Local Area Network | Office or Home | Building level |
-| MAN | Metropolitan Area Network | City Wi-Fi | City-wide |
-| WAN | Wide Area Network | Internet | Global |
+### How Data Travels
+**Send message → Breaks into packets → Travels through routers → Reaches target device**
 
 ---
 
-###  Data Flow:
-**Click Send → Data splits into packets → Travels via router → Reaches destination device**
+###  Things that can go wrong
+- Hackers & data theft
+- Viruses & malware
+- Slow internet due to overload
+- Weak Wi-Fi signal
+
+**Day 1 Conclusion:**  
+Networking simply means devices talking and sharing data with each other.
 
 ---
 
-###  Issues to Watch:
-- Hackers stealing info  
-- Viruses  
-- Lag from overload  
-- Weak Wi-Fi signals  
+## **Day 2 — LAN vs WAN & Basic Network Planning**
 
- **Day 1 Wrapped!**  
-Networking = Gadgets chatting with each other. Simple!
+###  Difference between LAN, MAN, WAN
 
----
-
-##  **Day 2: LAN vs WAN + Planning**
-
-###  Quick Compare:
-| Type | Range | Example |
-|------|--------|----------|
-| LAN | Small (Room to Building) | Office |
-| MAN | Medium (Campus or City) | University |
-| WAN | Large (Country to Country) | Internet |
+| Network | Coverage | Example |
+|---|---|---|
+| LAN | Building / Office | Home Wi-Fi |
+| MAN | City or campus | University network |
+| WAN | Country or worldwide | Internet |
 
 ---
 
-###  Company Example: *EduTech Solutions*
-- **HQ:** 100 staff (need fast LAN)  
-- **Dev Center:** 50 devs, 5km away (fiber link)  
-- **Sales Offices:** State-wide (WAN connection)  
-- **Remote Workers:** 25 people via VPN  
+###  Example Case Study: Small Company Network
+
+**Company:** EduTech Solutions  
+**Requirement:** Connect all offices & employees
+
+| Location | Need |
+|---|---|
+| HQ (100 staff) | Fast LAN, switches, router |
+| Dev Center (50 staff, 5km away) | Fiber link to HQ |
+| Sales Offices | WAN / Internet connectivity |
+| Remote employees | VPN access |
 
 ---
 
-###  My Network Design:
-- **HQ:** Star topology with high-speed switches  
-- **Dev Site:** Leased line connection  
-- **Sales Offices:** VPN links  
-- **Remotes:** Company VPN access  
+###  My Network Design Plan
+- HQ: **Star topology** + high-speed switches  
+- Dev center: **Leased line / Fiber**
+- Sales offices: **VPN**
+- Remote employees: **Secure VPN login**
+
+###  Challenges I noticed
+- Video meetings lag sometimes  
+- Home Wi-Fi may be slow for remote staff  
+- Security for laptops working from outside office
+
+ ## [Click here to view image of types of neworks ](../Asset/types.png)
 
 ---
 
-###  Hurdles:
-- Smooth video meetings  
-- Laptop security risks  
-- Slow home internet speeds  
+## **Day 3 — MAC & IP Addresses**
 
- *Diagram sketch planned for tomorrow!*
+###  MAC Address
+- Unique hardware address assigned to every device
+- Looks like: **AA:BB:CC:DD:EE:FF**
+- Used inside local network
+- Fixed and cannot be changed manually
 
----
-
-## [Click here to view image of types of neworks ](../Asset/types.png)
-
----
-
-
-##  **Day 3: MAC & IP Addresses (Clicked Finally!)**
-
-###  MAC Address:
-- Built-in hardware ID → Example: `AA:BB:CC:DD:EE:FF`  
-- Used inside local network only  
-- Permanent and unique  
-- Cannot be changed manually  
+###  IP Address
+- Logical address given to a device on the network
+- Example: **192.168.1.10**
+- Can change (assigned by router/DHCP)
+- Used to communicate across networks/internet
 
 ---
 
-###  IP Address:
-- Temporary digital address → Example: `192.168.1.10`  
-- Works globally  
-- Assigned automatically by **DHCP** via router  
+###  How MAC & IP Work Together
+1. Device sends data to an **IP address**
+2. Router asks — "Who has this IP?" (ARP)
+3. It finds the **MAC address**
+4. Data goes to correct device
+
+**Simple example:**  
+IP = Home address  
+MAC = Door number (specific to your room)
 
 ---
 
-###  How They Work Together:
-1. You send data to an **IP** address.  
-2. Router asks via **ARP:** “Who owns this IP?”  
-3. Gets the **MAC** address.  
-4. Sends the data — IP for routing, MAC for final delivery.
+###  My Small Test
+- My phone MAC: `E8:XX:XX:XX:XX:XX`
+- My phone IP: `192.168.0.105`
+
+###  Why Private IPs are needed
+- Protect devices from hackers  
+- Avoid IP shortage  
+- NAT hides internal IPs and keeps devices secure
 
 ---
 
-###  IP Types:
+###  Day 3 Summary
+**IP = Where the device is on the network**  
+**MAC = Who exactly the device is**
 
-| Type | Example | Use |
-|------|----------|-----|
-| Public | 8.8.8.8 | Used on the open internet |
-| Private | 192.168.1.1 | Used in home/office networks |
 
----
-
-###  My Setup:
-- **ISP Router:** Public IP (like `203.xxx.xxx.xxx`)  
-- **My Phone:** Private IP (`192.168.1.5`)  
-- **NAT:** Hides private IP, keeps data secure.  
-
----
-
-###  Without Private IPs:
-- Too few addresses for billions of devices  
-- No hiding layer  
-- Easy hacking  
-- Internet chaos! 
-
----
-
-###  My Test:
-- **Phone MAC:** `E8:XX:XX:XX:XX:XX`  
-- **Phone IP:** `192.168.0.105`  
-
- **Day 3 Summary:**  
-**IP = Street address, MAC = Door number. Nailed it!**
 
 ---
 # References
