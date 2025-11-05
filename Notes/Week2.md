@@ -56,7 +56,7 @@ Used for **web browsing, emails, file transfers**, etc.
 ---
  
 
-[Click here to view image osi model](../Asset/osi.png)
+# [Click here to view image osi model](../Asset/osi.png)
 
 
 ---
