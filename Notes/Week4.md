@@ -50,6 +50,9 @@ Traditional STP takes 30 to 50 seconds to converge. RSTP reduces it to less than
 ### Example Triangle Topology
 With three switches A, B, and C connected in a loop, packets can travel endlessly. STP selects A as the root and blocks one redundant link, creating a loop-free structure. If a link fails, STP reactivates the backup within seconds.
 
+---
+# [Click here to view image STP ](../Asset/STP.png)
+--
 ## Day 2 Routing Basics – How Data Finds Its Way
 
 Routing is the process of finding the best path for data to travel from one network to another. Routers are the devices responsible for routing—they act like traffic managers that guide data packets toward their destination. Each router stores information in a routing table, which tells it which path or next hop to use for specific destinations. There are two main types of routing: Static Routing and Dynamic Routing. In static routing, routes are manually set by a network administrator, which works well for small and stable networks. In dynamic routing, routers automatically share information and update their routes using routing protocols like OSPF, EIGRP, or BGP. Routing is essential for communication between different networks, ensuring that data takes the most efficient path and reaches its target safely. Without routing, computers in different networks or locations wouldn’t be able to talk to each other.
