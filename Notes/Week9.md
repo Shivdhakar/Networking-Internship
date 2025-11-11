@@ -13,7 +13,6 @@ This helps in:
 
 Think of subnetting like dividing a big class into smaller groups so things stay organized and easier to manage.
 
----
 
 ## How Subnetting Works 
 
@@ -30,7 +29,6 @@ Example idea:
 A /24 network has 256 IPs.  
 If we break it into 4 equal subnets, each gets 64 IPs.
 
----
 
 ##  Example of Subnetting
 
@@ -48,7 +46,6 @@ Result after subnetting (/26 each):
 | 3 | 192.168.1.128 | 192.168.1.191 | 192.168.1.129 – 192.168.1.190 |
 | 4 | 192.168.1.192 | 192.168.1.255 | 192.168.1.193 – 192.168.1.254 |
 
----
 
 ##  Key Points to Remember
 
@@ -71,7 +68,6 @@ Example:
 
 The `/24` means **24 bits are network bits**, and the rest are hosts.
 
----
 
 ##  Why CIDR is Used
 
@@ -87,7 +83,6 @@ This caused **wastage of IP addresses**.
 
 CIDR solves this by letting us choose **any size network**, not only /8, /16, /24.
 
----
 
 ##  How CIDR Works (Simple Logic)
 
@@ -103,7 +98,7 @@ Examples:
 
 So instead of using fixed classes, we can choose `/24`, `/25`, `/26`, etc.
 
----
+
 
 ##  CIDR Example
 
