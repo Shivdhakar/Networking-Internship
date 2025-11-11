@@ -136,3 +136,71 @@ CIDR = **flexible network sizing**, depending on requirement.
 | CIDR | Flexible method of writing and managing IP networks (/value) |
 
 
+#  Load Balancer
+
+A **load balancer** is a network device or software that distributes incoming traffic across multiple servers so no single server gets overloaded.  
+Its main goal is to keep applications fast, reliable, and always available.
+
+In simple words:  
+> Load balancer acts like a traffic policeman that directs user requests to different servers so all servers share the work.
+
+
+##  Why Load Balancer is Used?
+
+- Avoid overloading a single server  
+- Improve performance and speed  
+- Increase reliability and uptime  
+- Provide backup if one server fails  
+- Scale applications for more users  
+
+
+
+##  How It Works (Simple Explanation)
+
+Imagine 5 people asking the same question to only 1 teacher — the teacher will get tired.  
+If 5 teachers are available and each student goes to a different one — faster results.
+
+Similarly:
+
+1. User sends a request  
+2. Load balancer receives the request  
+3. It checks healthy servers  
+4. It forwards the request to the most suitable server  
+5. If one server fails, it sends traffic to others  
+
+
+
+## Load Balancing Methods (Algorithms)
+
+| Method | Meaning |
+|--------|--------|
+| **Round Robin** | Requests go to each server one by one |
+| **Least Connections** | Sends traffic to the server with the fewest open connections |
+| **IP Hash** | Client IP decides which server it connects to |
+| **Weighted Round Robin** | Stronger servers get more requests |
+
+
+
+##  Types of Load Balancers
+
+| Type | Description |
+|------|------------|
+| **Hardware Load Balancer** | Dedicated physical device (used in big data centers) |
+| **Software Load Balancer** | Installed on servers (Nginx, HAProxy, Traefik) |
+| **Cloud Load Balancer** | Provided by cloud services (AWS, Azure, GCP) |
+
+
+##  Where Load Balancers Are Used?
+
+- Websites and web applications  
+- Cloud platforms  
+- Banking systems  
+- E-commerce websites  
+- High-traffic online services  
+
+Examples: Amazon, Google, YouTube, Flipkart all use load balancers.
+
+
+
+
+
