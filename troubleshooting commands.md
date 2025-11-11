@@ -183,5 +183,15 @@
 | `show interfaces status` | Interface overview | Displays port speed, duplex, and VLAN info. |
 
 
+##  Network Troubleshooting Commands
+
+| Command | Use | Description |
+|--------|------|------------|
+| `ping <ip>` | Test connectivity | Sends ICMP Echo packets to verify device reachability |
+| `traceroute <ip>` / `tracert <ip>` | Trace network path | Shows the route packets take hop-by-hop to reach the destination |
+| `telnet <ip> <port>` | Test port access | Checks if a specific service/port on a remote device is reachable |
+| `ssh user@ip` | Secure remote login | Allows secure access to remote devices for configuration and management |
+
+
 
 
