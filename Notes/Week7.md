@@ -1,4 +1,4 @@
-# Networking Internship Notes: ACLs, L2 Switching, WAN Techs
+# Networking Internship Notes:
 
 ## Access Control Lists (ACLs): The Net's Bouncer
 
