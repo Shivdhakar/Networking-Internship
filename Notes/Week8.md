@@ -53,10 +53,31 @@ If there is no reply, it means network failure, device is off, wrong IP, or ICMP
 Shows the route packets take from source to destination and finds where delay or failure occurs.
 
 **How it works:**
-- Sends packets with increasing TTL  
-- Shows each hop (router) between user and destination  
-- Helps identify where packets stop  
+raceroute helps us see **all the routers** a packet passes through before reaching the final destination.
 
+It works using a concept called **TTL – Time To Live**:
+
+- First packet is sent with TTL = 1  
+  → It reaches first router and stops  
+  → That router returns an error message and its IP address  
+
+- Next packet TTL = 2  
+  → Reaches Router 1 → Router 2 → stops  
+  → We see 2nd router's IP  
+
+This continues until the packet reaches the final destination or the route fails.
+
+So traceroute shows:
+- **Each hop (router)** on the path
+- **Time taken at each hop**
+- Where delay or packet loss happens
+
+If traceroute hangs or star-marks (*) appear at some hop, it means:
+- Router is overloaded OR
+- Router is not responding to traceroute OR
+- There is a network break at that hop
+
+Traceroute is very useful to find **where exactly the network is failing**
 **Why we use it:**
 - Find path to a destination  
 - Detect slow or failing network points  
@@ -76,6 +97,25 @@ If traceroute stops at a hop, that hop might be down, overloaded, or blocked.
 Checks if a specific network port is open and responding on a remote device.
 
 > Telnet is not used for secure login today because it is not encrypted, but it is still useful for testing ports.
+
+#### How it works (Detailed)
+Telnet checks if a **specific port** on a remote device is open and responding.
+
+Steps when you run telnet:
+
+1. Your system tries to create a connection to a destination IP and port  
+   (Example: `telnet 192.168.1.10 80` tests web port 80)
+
+2. If the port is open, the remote machine answers the request  
+   → You see a blank screen or connected message  
+   → Means service on that port is running
+
+3. If the port is closed or blocked:
+   → Connection fails  
+   → Means either firewall is blocking, or service is not running
+
+Telnet does not encrypt data, so it is unsafe for login, but still very helpful for **port troubleshooting**.
+
 
 **Why we use it:**
 - Test whether a server port is reachable  
@@ -97,7 +137,28 @@ Secure way to remotely login and manage network devices or servers.
 
 **Difference from Telnet:**
 - SSH is **encrypted and secure**  
-- Telnet is **unencrypted and unsafe** for login  
+- Telnet is **unencrypted and unsafe** for login
+
+  #### How it works (Detailed)
+SSH helps securely control another computer or network device remotely.
+
+Here is what happens when we use SSH:
+
+1. You type an SSH command like `ssh user@serverIP`
+2. Your system sends an encrypted connection request
+3. Both computers complete a **key exchange process**
+   - They verify identity
+   - They create a secure encrypted channel
+4. You enter your password (or key authentication is used)
+5. After successful login, you get a **remote terminal session**  
+   (you control the remote machine like you are sitting there)
+
+SSH uses **encryption**, meaning all data (username, password, commands) is secure from hackers.
+
+It is commonly used by:
+- Network engineers
+- System admins
+- DevOps and cloud engineers
 
 **Why we use it:**
 - Manage servers remotely  
