@@ -1,4 +1,4 @@
-# Networking Notes: DHCP, NTP, Handshake, NAT/PAT
+# Networking Notes:
 
 
 ##  DHCP: (Dynamic Host Configuration Protocol)
