@@ -12,7 +12,7 @@ Think of subnetting like dividing a big class into smaller groups so things stay
 
 ---
 
-## How Subnetting Works (Simple Explanation)
+## How Subnetting Works 
 
 An IP address has two parts:
 
