@@ -156,4 +156,6 @@ It’s like renting your own private lane.
 
 **Day 2** - [LAN Switching](https://claude.ai/public/artifacts/c07e6c2a-f9ae-4abd-a263-adb67b666bc9)  
 
+**Day 3** - [WAN ](https://claude.ai/public/artifacts/376a8e93-7bdb-4cc1-9ab0-057fe128fc43) 
+
 
