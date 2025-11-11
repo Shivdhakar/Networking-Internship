@@ -8,10 +8,28 @@ Troubleshooting in networking means finding and fixing issues that stop devices 
 Used to check if another device or server is reachable over the network.
 
 **How it works:**
-- Sends ICMP Echo Request  
-- Receives ICMP Echo Reply  
-- Shows packet round-trip time  
-- Displays packet loss (if any)
+When we use `ping`, our computer sends small test packets to the destination device. These packets are called **ICMP Echo Request** messages. If the other device is active and reachable, it responds with **ICMP Echo Reply**.
+
+During this process:
+
+- The packet first goes to the **default gateway (router)**.
+- Then it travels through other routers in the network (if the destination is far).
+- It finally reaches the target device.
+- The target device sends a reply back the same way.
+
+Ping measures:
+
+- **Round-trip time** (time taken to send and receive data)
+- **Packet loss** (how many packets didn't return)
+- **TTL value** (shows how far the packet traveled)
+
+If no reply comes back, it means:
+- Device is offline OR
+- Wrong IP address OR
+- Network cable/wifi problem OR
+- Firewall blocking ICMP
+
+This simple test helps confirm if network connectivity exists or not
 
 **Why we use it:**
 - Test network connectivity  
