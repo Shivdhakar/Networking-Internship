@@ -1,6 +1,9 @@
 # Subnetting
+Subnetting is the process of dividing one large IP network into smaller, manageable networks called subnets.
+It helps organize the network, improve security, reduce broadcast traffic, and use IP addresses more efficiently.
 
-Subnetting means **dividing one large network into smaller logical networks** called subnets.
+Simple line:
+Subnetting = Breaking one network into many smaller networks.
 
 This helps in:
 - Better network organization
@@ -58,8 +61,11 @@ Result after subnetting (/26 each):
 
 #  CIDR (Classless Inter-Domain Routing)
 
-CIDR is a way to write IP addresses and subnet masks using **prefix notation** like `/24`, `/26`.
+CIDR is a method of representing and allocating IP addresses using a prefix / notation (like /24, /26) instead of old Class A/B/C system.
+It allows flexible network sizes and prevents wastage of IP addresses.
 
+Simple line:
+CIDR = A way to write and manage IP ranges using /prefix for flexibility.
 Example:  
 `192.168.1.0/24`
 
