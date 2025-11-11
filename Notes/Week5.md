@@ -1,4 +1,4 @@
-#  Networking Internship Notes: OSPF, EIGRP, and BGP Days
+#  Networking Internship Notes: 
 
 ##  Day 1: OSPF – Link-State Powerhouse
 
