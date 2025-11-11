@@ -1,127 +1,61 @@
-# 🚀 Networking Internship Documentation
+# Networking Internship Repository
 
-Welcome to my **Networking-Internship** repository!  
-This repo contains all my learning work, lab practice, weekly notes, commands, and diagrams from my networking internship and self-practice journey.
+This repository contains my networking learning materials, weekly notes, lab configurations, and troubleshooting commands from my internship and self-study journey.
+The purpose of this repo is to track my progress, organize networking concepts, and provide quick access to important practical labs and reference notes.
 
-The goal of this repo is to track my progress, build a networking knowledge base, and help others who want to learn networking with hands-on labs and real-time notes.
+##  Folder Structure
 
----
+| Folder/File | Purpose |
+|------------|--------|
+| **Notes/** | Weekly notes & theory topics (OSI, Subnetting, Routing, etc.) |
+| **Labs/** | Hands-on configurations & Packet Tracer lab files |
+| **Assets/** | Network diagrams, screenshots, and reference visuals |
+| **troubleshooting commands.md** | All essential network troubleshooting commands |
+| **README.md** | Intro + navigation guide (this file) |
 
-## 📂 Repository Structure
+ From this README, you can quickly access the most important folders:  
+- 🔗 [`Notes`](./Notes)  
+- 🔗 [`Labs`](./Labs)  
+- 🔗 [`Assets`](./Assets)  
+- 📄 [`Troubleshooting Commands`](./troubleshooting%20commands.md)
 
-| Folder / File | Description |
-|--------------|-------------|
-| **Notes/** | Weekly study notes and networking concepts |
-| **Labs/** | Practical networking labs (Packet Tracer / CLI) |
-| **Troubleshooting Commands.md** | Collection of useful networking commands and purpose |
-| **Assets/** | Diagrams, screenshots, and reference images |
-| **README.md** | Overview of this project |
 
----
+## What’s Included
 
-## 📝 Notes (Weekly Learning)
-
-The **Notes** folder contains weekly notes covering core networking topics like:
-
-- OSI Model
-- TCP/IP Model
+###  Topics Covered
+- Networking basics, OSI, TCP/IP
 - Subnetting & CIDR
+- VLAN, VTP, STP
 - Routing protocols (RIP, OSPF, EIGRP, BGP)
 - NAT, ACL, DHCP, DNS
-- Load Balancing
-- Network Troubleshooting Tools (ping, tracert, telnet, ssh, etc.)
+- Load Balancing & Network Security basics
 
-> Notes are written in simple and clear language so beginners can follow easily.
-
-Each week file = one learning module ✅
-
----
-
-## 🧪 Labs
-
-The **Labs** folder contains hands-on networking practice:
-
-- VLAN Configuration
+###  Practical Labs
+- Router & Switch configuration
 - Inter-VLAN Routing
-- Static Routing
-- RIP Routing
-- OSPF Configuration
-- EIGRP Configuration
-- BGP Configuration
-- NAT / PAT Lab
-- ACL Lab
-- DHCP Setup
-- Packet Tracer Projects
+- Static & Dynamic Routing
+- ACL & NAT Configuration
+- DHCP setup
+- Real device CLI & Packet Tracer projects
 
-Each lab includes:
-- Topology Diagram / Screenshot
-- Step-by-Step Configuration
-- Commands Used
-- Verification Output
-- Conclusion / Learning
+###  Quick Command Reference
+A dedicated commands file for:
+- Ping / Traceroute / SSH / Telnet
+- Cisco `show` & `debug` commands
+- Routing & switching commands
 
----
 
-## 🛠️ Troubleshooting Commands
+##  Purpose
 
-`troubleshooting commands.md` includes commonly used commands for:
+- Document and revise networking concepts
+- Practice real-world network configurations
+- Build a learning portfolio for networking & CCNA
+- Share knowledge with other learners
 
-- Cisco IOS
-- Linux Networking
-- Ping / Traceroute / Telnet / SSH
-- Routing and switching commands
-- Debug & Show commands
 
-> Helpful for interviews + real-world debugging.
+##  Feedback & Improvements
 
----
+If you find anything useful, feel free to ⭐ star the repo.  
+Suggestions and improvements are always welcome!
 
-## 📁 Assets
-
-The **Assets** folder contains:
-
-- Network topology diagrams
-- Screenshots of packet tracer labs
-- Reference charts & flow diagrams
-
-These visuals help understand networking flow faster.
-
----
-
-## 🎯 Objectives of this Repository
-
-- Build strong fundamentals in networking
-- Practice real-world command-line networking
-- Document every week’s learning clearly
-- Create a public knowledge base
-- Help others learning networking
-
----
-
-## 🧠 Skills Covered Here
-
-- Networking Fundamentals
-- Cisco Routers & Switches
-- IPv4 Subnetting & CIDR
-- Routing Protocols (RIP/OSPF/EIGRP/BGP)
-- NAT, ACL, DHCP, DNS
-- Linux Networking Basics
-- Troubleshooting & Debugging
-- Packet Tracer Labs
-
----
-
-## 🙌 Contribution & Feedback
-
-This is my personal learning repo, but contributions and suggestions are welcome!  
-If you find mistakes or want to add something, feel free to open an issue or PR.
-
----
-
-## ⭐ Support
-
-If this repo helps you,
-please ⭐ star this project. It motivates me to keep learning and sharing! 🚀
-
-Thanks for visiting! 😊  
-Stay connected & keep networking ⚡
+Happy Learning & Networking 
