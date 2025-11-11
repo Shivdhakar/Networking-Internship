@@ -14,10 +14,10 @@ The purpose of this repo is to track my progress, organize networking concepts, 
 | **README.md** | Intro + navigation guide (this file) |
 
  From this README, you can quickly access the most important folders:  
-- 🔗 [`Notes`](./Notes)  
-- 🔗 [`Labs`](./Labs)  
-- 🔗 [`Assets`](./Assets)  
-- 📄 [`Troubleshooting Commands`](./troubleshooting%20commands.md)
+-  [`Notes`](./Notes)  
+-  [`Labs`](./Labs)  
+-  [`Assets`](./Assets)  
+-  [`Troubleshooting Commands`](./troubleshooting%20commands.md)
 
 
 ## What’s Included
