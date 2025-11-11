@@ -1,1 +1,113 @@
+# Network Troubleshooting Tools
+
+Troubleshooting in networking means finding and fixing issues that stop devices from communicating. As B.Tech students, we often use basic tools to check connectivity, find delays, and verify whether services are running properly.
+
+##  1. **ping**
+
+**Purpose:**  
+Used to check if another device or server is reachable over the network.
+
+**How it works:**
+- Sends ICMP Echo Request  
+- Receives ICMP Echo Reply  
+- Shows packet round-trip time  
+- Displays packet loss (if any)
+
+**Why we use it:**
+- Test network connectivity  
+- Check response time (latency)  
+- Identify unstable network links  
+
+**Example usage:**  
+Typing `ping 8.8.8.8` in terminal checks internet connectivity by contacting Google DNS.
+
+**Important terms:**
+- **TTL** → Time-to-Live (number of hops allowed)  
+- **Time** → Delay in milliseconds  
+
+If there is no reply, it means network failure, device is off, wrong IP, or ICMP is blocked.
+
+---
+
+##  2. **traceroute / tracert** (Windows)
+
+**Purpose:**  
+Shows the route packets take from source to destination and finds where delay or failure occurs.
+
+**How it works:**
+- Sends packets with increasing TTL  
+- Shows each hop (router) between user and destination  
+- Helps identify where packets stop  
+
+**Why we use it:**
+- Find path to a destination  
+- Detect slow or failing network points  
+- Troubleshoot routing issues  
+
+**Example usage:**  
+- `traceroute google.com` (Linux/Mac)  
+- `tracert google.com` (Windows)  
+
+If traceroute stops at a hop, that hop might be down, overloaded, or blocked.
+
+---
+
+##  3. **telnet**
+
+**Purpose:**  
+Checks if a specific network port is open and responding on a remote device.
+
+> Telnet is not used for secure login today because it is not encrypted, but it is still useful for testing ports.
+
+**Why we use it:**
+- Test whether a server port is reachable  
+- Check firewall or service blocking  
+- Useful for troubleshooting services like web servers and databases  
+
+**Example usage:**  
+Typing `telnet 192.168.1.10 80` tests if port 80 (web server) is running on that IP.
+
+- If connection opens → **port working**  
+- If connection fails → **port blocked or service down**
+
+---
+
+##  4. **SSH (Secure Shell)**
+
+**Purpose:**  
+Secure way to remotely login and manage network devices or servers.
+
+**Difference from Telnet:**
+- SSH is **encrypted and secure**  
+- Telnet is **unencrypted and unsafe** for login  
+
+**Why we use it:**
+- Manage servers remotely  
+- Configure network devices securely  
+- Transfer files and execute commands safely  
+
+**Example usage:**  
+Typing `ssh username@192.168.1.10` connects securely to the device.
+
+---
+
+##  Table
+
+| Tool | Purpose | Key Function | Common Use |
+|------|--------|-------------|------------|
+| **ping** | Check connectivity | Sends ICMP request & waits for reply | Test if device is reachable |
+| **traceroute / tracert** | Show network path | Displays hops and delays | Find where network is slow or failing |
+| **telnet** | Test specific port | Checks if port is open | Troubleshoot service/port issues |
+| **SSH** | Secure remote login | Encrypted access to devices | Manage servers and network devices |
+
+---
+
+## ONE short Answer
+
+In real-world and lab troubleshooting:
+
+1. Start with **ping** to check connectivity  
+2. Use **traceroute** to find path issues  
+3. Use **telnet** to check services/ports  
+4. Use **SSH** for secure remote access and administration  
 
