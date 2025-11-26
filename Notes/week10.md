@@ -332,4 +332,3 @@ Your communication is secure and authenticated.
 
 This is how **SSL VPN** keeps corporate data safe.
 
-
