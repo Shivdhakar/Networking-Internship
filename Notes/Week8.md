@@ -188,5 +188,8 @@ In real-world and lab troubleshooting:
 1. Start with **ping** to check connectivity  
 2. Use **traceroute** to find path issues  
 3. Use **telnet** to check services/ports  
-4. Use **SSH** for secure remote access and administration  
+4. Use **SSH** for secure remote access and administration
+
+
+**Day** - [Network Troubleshooting Tools](https://claude.ai/public/artifacts/f62c7089-2ba4-41ec-ac60-2d38a54a65d9)  
 
