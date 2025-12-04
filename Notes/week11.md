@@ -126,7 +126,7 @@ Banks like SBI and HDFC use MPLS-based networks to connect their branches.
 
 <br/>
 
-### HTTPS (SSL/TLS) – Simple steps
+### HTTPS (SSL/TLS) 
 
 1. **Client Hello:** The browser asks the server for a secure connection.  
 2. **Server Certificate:** The server sends a digital certificate signed by a trusted Certificate Authority (CA).  
