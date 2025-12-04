@@ -1,8 +1,9 @@
 #  Networking Troubleshooting Commands & Uses
 
-~~~
+<br/>
+
 ##  Networking Basics
-~~~
+
 
 
 
@@ -18,9 +19,8 @@
 
 
 
-~~~
 ##  Types of Networking (LAN, WAN, MAN)
-~~~
+
 
 
 
