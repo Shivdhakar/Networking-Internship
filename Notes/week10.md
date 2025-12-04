@@ -360,5 +360,36 @@ A small company firewall may have rules like:
 
 ---
 
+# Types of Firewalls (Explained in Simple Student Language)
+
+Firewalls can be of different types based on how they inspect and filter network traffic.  
+Below are the main types explained in an easy and detailed way.
+
+---
+
+## 1. Packet-Filtering Firewall
+
+A packet-filtering firewall is the simplest and oldest type of firewall. It checks each packet of data based on basic information such as source IP address, destination IP address, port number, and protocol (TCP or UDP). If the packet matches an allowed rule, it is forwarded; otherwise, it is blocked. This firewall does not understand the full connection or application, so it is less secure compared to advanced firewalls. It works mainly at **Layer 3 (Network layer)** and **Layer 4 (Transport layer)**. Packet filters are fast but provide only basic protection.
+
+---
+
+## 2. Stateful Firewall
+
+A stateful firewall is more intelligent than a packet-filtering firewall. It not only checks packet headers but also keeps track of the **state of the connection**. It knows whether a connection is new, already established, or related to another allowed connection. Because it remembers active sessions, it can make better security decisions. This makes stateful firewalls more secure and reliable. Most modern routers and firewalls use stateful inspection to protect corporate networks.
+
+---
+
+## 3. Application Layer Firewall / Next-Generation Firewall (NGFW)
+
+An application layer firewall, also called a Next-Generation Firewall (NGFW), is the most advanced type. It can look deep inside the traffic and identify which application is being used, such as Facebook, YouTube, WhatsApp, Gmail, or any specific software. NGFWs can block or allow traffic based on applications, users, content, or URLs. They also include advanced security features like **IDS/IPS**, **deep packet inspection**, **malware protection**, and **URL filtering**. These firewalls operate at **Layer 7 (Application layer)** and provide strong security for modern networks where threats are more complex.
+
+---
+
+## 4. Host-Based Firewall
+
+A host-based firewall runs on individual devices like laptops, desktops, or servers. Examples include Windows Defender Firewall, macOS Firewall, or Linux iptables. Instead of protecting the whole network, it protects only the device it is installed on. It monitors and filters traffic coming in and out of that specific machine. Host-based firewalls are useful for adding an extra layer of protection, especially for personal devices and company endpoints.
+
+---
+
 
 
