@@ -55,6 +55,7 @@ Result after subnetting (/26 each):
 - Uses a **subnet mask** to define subnet size (example: `/26`, `/28`)
 
 ---
+<br/>
 
 #  CIDR (Classless Inter-Domain Routing)
 
@@ -135,6 +136,7 @@ CIDR = **flexible network sizing**, depending on requirement.
 | Subnetting | Dividing a large network into small networks |
 | CIDR | Flexible method of writing and managing IP networks (/value) |
 
+<br/>
 
 #  Load Balancer
 
