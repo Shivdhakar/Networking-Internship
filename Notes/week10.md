@@ -1,4 +1,4 @@
-# Router Redundancy, Firewall, and VPN  
+# Router Redundancy and Firewall
 
 In a corporate network, the main goals are:
 
@@ -17,106 +17,185 @@ To achieve this, companies use:
 
 ##  Router Redundancy
 
-###  Why do we need router redundancy?
+### Why do we need Router Redundancy?
 
-In a normal network, all PCs in a LAN use a **default gateway** (a router) to go outside the network.
+Every computer in a network uses a default gateway (usually a router) to reach:
 
-- If that **single router** goes down:
-  - Users cannot access the internet or other networks.
-  - This is called a **single point of failure**.
+The internet
 
-To prevent downtime, companies use **more than one router** to provide the same gateway service.  
-This concept is known as **router redundancy**.
+Other networks
 
----
+Cloud services
 
-###  Basic idea of router redundancy
+If the only router in the network goes down:
 
-- Two or more routers are connected to the same LAN.
-- They **share one virtual IP address** which acts as the default gateway for PCs.
-- From the user's point of view, there is only **one gateway IP**.
+❌ No internet
+❌ No communication
+❌ Network failure
 
-Internally, routers decide:
+#### This situation is called: { Single point of failure }
 
-- Which router is **Active / Master**
-- Which router is **Standby / Backup**
+To avoid this problem, companies add another router as a backup.
+If one router fails, the second one automatically takes over.
 
-If the active router fails:
+#### This setup is called: { Router Redundancy }
 
-- The backup router **automatically takes over** the virtual IP.
-- Users usually do not notice any interruption.
+## What is the basic idea of Router Redundancy?
 
-This is done using **First Hop Redundancy Protocols (FHRP)** such as:
+Imagine two teachers sharing one classroom:
 
-- HSRP (Hot Standby Router Protocol)
-- VRRP (Virtual Router Redundancy Protocol)
-- GLBP (Gateway Load Balancing Protocol)
+Teacher A teaches.
 
----
+Teacher B waits outside in case Teacher A gets sick.
 
-###  HSRP (Hot Standby Router Protocol)
+Same in networking:
 
-- **Vendor**: Cisco proprietary
-- **Working**:
-  - Routers form an HSRP group.
-  - They use a **virtual IP** and a **virtual MAC** address.
-  - One router becomes **Active** (forwards traffic).
-  - Another becomes **Standby** (ready to take over).
-  - Routers send **Hello messages** to check health.
+Two routers share one virtual IP address (example: 192.168.1.1), and PCs use this one virtual IP as the gateway.
 
-If the Active router fails:
+Roles:
 
-- The Standby router becomes the new Active router automatically.
+Active Router / Master → currently forwarding traffic
 
-**Use Case**: Simple active–standby gateway for LANs using Cisco devices.
+Standby Router / Backup → waiting to take over
 
----
-<br/>
+If the active router dies:
 
-###  VRRP (Virtual Router Redundancy Protocol)
+<> The standby router becomes the new active gateway instantly
+<> Users do not notice the change
 
-- **Vendor**: Open standard (supports multiple vendors)
-- Similar to HSRP.
-- One router is **Master**, others are **Backup**.
-- All share a **virtual IP**.
-- If Master fails, a Backup becomes the new Master.
+#### This automatic switching is done by FHRP protocols:
 
-**Use Case**: Multi-vendor networks requiring redundancy.
+HSRP
 
----
+VRRP
 
-### GLBP (Gateway Load Balancing Protocol)
+GLBP
 
-- **Vendor**: Cisco proprietary
-- Main difference:
-  - **HSRP/VRRP**: focus on redundancy (one active at a time)
-  - **GLBP**: provides both **redundancy + load balancing**
+## First Hop Redundancy Protocols (FHRP)
 
-GLBP:
+These protocols help two or more routers act as one single gateway.
 
-- Uses one virtual IP
-- Uses **multiple virtual MAC addresses**
-- Hosts are assigned different virtual MACs
-- Traffic is **balanced across multiple routers**
+We study 3 main types:
 
-If one router fails, others continue handling traffic.
+HSRP (Cisco only)
 
-**Use Case**: When both backup and load distribution are needed.
+VRRP (Open standard)
+
+GLBP (Cisco only + load balancing)
+
+
+
+## 1. HSRP (Hot Standby Router Protocol)
+  
+HSRP is a Cisco protocol that provides router redundancy by allowing two or more routers to work together and act like a single gateway for the network.
+
+In simple words
+
+- Two routers share the same gateway IP.  
+- One router is *Active* and the other waits as *Backup*.  
+- If the Active router fails the Backup router automatically takes over.
 
 ---
 
-### Summary of HSRP vs VRRP vs GLBP
-
-- **HSRP**  
-  Cisco-only, Active–Standby, simple redundancy.
-
-- **VRRP**  
-  Open standard, Master–Backup, multi-vendor support.
-
-- **GLBP**  
-  Cisco-only, redundancy + load balancing.
+###  How HSRP Works
+- Two routers form an HSRP group.  
+- They create a **virtual IP address** (example: `192.168.1.1`).  
+- All PCs use this virtual IP as their default gateway.  
+- The router with the highest priority becomes **Active**.  
+- The second router becomes **Standby**.  
+- Routers send *hello messages* to check if the Active router is alive.  
+- If the Active router fails → the Standby router becomes the new Active router *without interruption*.
 
 ---
+
+###  Why HSRP Is Used?
+- To avoid network downtime  
+- To remove single point of failure  
+- For Cisco-only environments  
+
+---
+
+## 2. VRRP (Virtual Router Redundancy Protocol)
+
+
+VRRP is an open-standard redundancy protocol that allows multiple routers to share a virtual IP address and provide a backup gateway for hosts.
+
+In simple words
+
+- VRRP works like HSRP but can run on routers from different vendors (Cisco, Juniper, HP).  
+- One router is the **Master**, and others are **Backup**.
+
+---
+
+###  How VRRP Works
+- Routers share one virtual IP.  
+- The router with the highest priority becomes **Master**.  
+- All other routers act as Backup routers.  
+- If the Master fails → a Backup becomes the new Master automatically.  
+- Works across multiple vendors (multi-vendor support).
+
+---
+
+###  Why VRRP Is Used?
+- For networks with mixed devices  
+- Redundancy across different brands  
+- Faster failover compared to HSRP  
+
+---
+
+## 3. GLBP (Gateway Load Balancing Protocol)
+
+GLBP is a Cisco protocol that provides both router redundancy and load balancing by allowing multiple routers to actively forward traffic at the same time.
+
+In simple words
+
+- GLBP is different from HSRP and VRRP.  
+- Instead of one router working and others waiting, **all routers can share the traffic**.
+
+---
+
+###  How GLBP Works
+
+- Routers form a GLBP group.  
+- They use one **virtual IP**, like HSRP and VRRP.  
+- GLBP assigns **multiple virtual MAC addresses**.  
+- Each host gets a different virtual MAC address.  
+- Traffic is distributed across all routers.  
+- If one router fails → remaining routers continue forwarding traffic.
+
+---
+
+###  Why GLBP Is Used?
+- Provides load balancing across multiple routers  
+- Provides redundancy at the same time  
+- All routers are used efficiently (no idle router)
+
+---
+
+##  Comparison  Table
+
+| Feature        | HSRP        | VRRP           | GLBP                         |
+|----------------|-------------|----------------|-------------------------------|
+| Standard       | Cisco-only  | Open standard  | Cisco-only                    |
+| Purpose        | Redundancy only | Redundancy only | Redundancy + Load Balancing |
+| Active Routers | 1 Active    | 1 Master       | Multiple Active              |
+| Backup Routers | Standby     | Backup routers | Secondary routers support    |
+| Failover       | Yes         | Yes (faster)   | Yes                           |
+| Virtual IP     | ✔           | ✔              | ✔                             |
+| Virtual MAC    | 1           | 1              | Multiple                      |
+
+---
+
+##  Simple One-Line Definitions
+
+**HSRP:** Cisco protocol where one router is Active and another is Standby, providing gateway redundancy.
+
+**VRRP:** Open-standard redundancy protocol similar to HSRP, but supports multi-vendor routers.
+
+**GLBP:** Cisco protocol that provides redundancy and load balancing by allowing multiple routers to forward traffic together.
+
+---
+
 
 ##  Firewalls in Corporate Networks
 
@@ -188,149 +267,4 @@ This ensures:
 - Customers can access the company website.
 - Dangerous services are blocked.
 
----
-
-## VPN (Virtual Private Network) 
-
-###  What is a VPN?
-
-A **VPN** creates a **secure, encrypted tunnel** over the public Internet.
-
-Even though traffic travels across the Internet, it behaves as if devices were inside the **same private network**.
-
-Key points:
-
-- Ensures privacy and security  
-- Protects data from hackers/sniffers  
-- Used for remote work and branch connectivity
-
----
-
-###  Why do companies use VPNs?
-
-#### **Secure Remote Access**
-Employees can access internal servers, apps, and shared drives from anywhere.
-
-#### **Connecting Branch Offices**
-Site-to-Site VPN connects different office locations through the Internet.
-
-#### **Secure Communication with Partners**
-Limited access to external partners using controlled VPN access.
-
-#### **Cost Savings**
-Uses Internet instead of expensive private leased lines.
-
----
-
-###  Types of VPN
-
-#### **Site-to-Site VPN**
-- Connects two or more offices.
-- Uses VPN routers/firewalls.
-- Often uses **IPsec**.
-- Transparent for users.
-
-Example:  
-Head Office (Delhi) ⇄ IPsec VPN ⇄ Branch Office (Jaipur)
-
----
-
-#### ** Remote-Access VPN**
-- Used by individual employees.
-- User installs VPN client software.
-- Connects using username/password/OTP.
-- Gets a **virtual IP** from company.
-
----
-
-#### ** SSL VPN**
-- Works using **HTTPS (SSL/TLS)**.
-- Can be accessed through a browser or light client.
-- Uses the same encryption technology as secure websites.
-
-Example:  
-Open `https://vpn.company.com` → Login → Access internal apps.
-
----
-
-#### ** MPLS / Provider VPN**
-- Provided by ISPs.
-- Creates private networks over the provider's backbone.
-- Used by large companies for stable branch connectivity.
-
----
-
-##  SSL / TLS (and Example)
-
-###  What is SSL / TLS?
-
-SSL (Secure Sockets Layer) and TLS (Transport Layer Security) provide:
-
-- Encryption  
-- Data integrity  
-- Authentication  
-
-Whenever you see `https://`, it means the website is using **SSL/TLS**.
-
----
-
-###  Why SSL/TLS Is Important?
-
-Without encryption:
-
-- Passwords, OTPs, bank data would be readable as plain text.
-- Hackers can sniff this data.
-
-With SSL/TLS:
-
-- Data is encrypted.
-- Even if packets are captured, they cannot be easily read.
-
----
-
-###  How HTTPS (SSL/TLS) Works – Simple Steps
-
-1. **Client Hello**  
-   Browser requests a secure connection.
-
-2. **Server Certificate**  
-   Server sends a certificate issued by a CA (DigiCert, Let's Encrypt, etc.).
-
-3. **Certificate Validation**  
-   Browser checks:
-   - Issuing authority
-   - Expiry
-   - Domain name match
-
-4. **Key Exchange**  
-   Browser creates a session key, encrypts it with the server’s public key, and sends it.
-
-5. **Secure Session**  
-   Both sides now use the session key for encryption/decryption.
-
-Result:  
-Your communication is secure and authenticated.
-
----
-
-###  SSL Example Related to VPN
-
-**Scenario: Employee using SSL VPN from home**
-
-1. User opens:  
-   `https://vpn.orphinchemistry.com`
-
-2. The VPN gateway:
-   - Sends its SSL/TLS certificate.
-   - Browser validates it.
-
-3. After validation:
-   - An **HTTPS secure tunnel** is created.
-   - Login details (username, password, OTP) are encrypted.
-
-4. After login:
-   - User can access internal applications.
-   - All further traffic is protected through the SSL tunnel.
-
-This is how **SSL VPN** keeps corporate data safe.
 
