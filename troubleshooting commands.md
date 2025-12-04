@@ -5,7 +5,7 @@
 ##  Networking Basics
 
 
-
+<br/>
 
 | Command | Use | Description |
 |----------|-----|-------------|
@@ -21,7 +21,7 @@
 
 ##  Types of Networking (LAN, WAN, MAN)
 
-
+<br/>
 
 
 
