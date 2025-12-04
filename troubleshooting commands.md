@@ -17,7 +17,7 @@
 
 
 
-
+<br/>
 
 ##  Types of Networking (LAN, WAN, MAN)
 
@@ -37,7 +37,7 @@
 
 
 
-
+<br/>
 
 ##  OSI Model
 
@@ -58,7 +58,7 @@
 
 
 
-
+<br/>
 
 ##  TCP/IP Model
 
@@ -69,7 +69,7 @@
 | Transport | End-to-end communication | TCP, UDP |
 | Application | User services | HTTP, FTP, DNS, SMTP |
 
----
+<br/>
 
 ##  L2 & L3 Concepts (VLANs and Trunks)
 
@@ -81,7 +81,7 @@
 | `show vlan brief` | Verify VLANs | Displays all VLANs and their assigned ports. |
 | `show interfaces trunk` | Verify trunks | Checks trunk status and allowed VLANs. |
 
-
+<br/>
 ##  Spanning Tree Protocol (STP)
 
 | Command | Use | Description |
@@ -90,7 +90,7 @@
 | `spanning-tree vlan <ID> priority <value>` | Set root bridge | Forces a switch to be root by lowering priority. |
 | `spanning-tree portfast` | Enable fast access port | Bypasses STP delay on access ports. |
 
-
+<br/>
 
 ##  Routing (General)
 
@@ -101,7 +101,7 @@
 | `show ip interface brief` | Check interface status | Lists interfaces, IPs, and their state. |
 
 
-
+<br/>
 ##  RIP (Routing Information Protocol)
 
 | Command | Use | Description |
@@ -111,7 +111,7 @@
 | `show ip protocols` | Verify RIP info | Displays routing protocol details. |
 | `show ip route rip` | View RIP routes | Shows routes learned through RIP. |
 
----
+<br/>
 
 ##  OSPF (Open Shortest Path First)
 
@@ -122,7 +122,7 @@
 | `show ip ospf neighbor` | View neighbors | Checks OSPF adjacency status. |
 | `show ip ospf interface` | Interface info | Displays OSPF details per interface. |
 
----
+<br/>
 
 ##  EIGRP (Enhanced Interior Gateway Routing Protocol)
 
@@ -132,7 +132,7 @@
 | `network <network>` | Advertise network | Adds network to EIGRP updates. |
 | `show ip eigrp neighbors` | Verify neighbors | Displays connected EIGRP neighbors. |
 | `show ip eigrp topology` | View topology | Shows all learned routes and successors. |
-
+<br/>
 
 ##  BGP (Border Gateway Protocol)
 
@@ -143,7 +143,7 @@
 | `network <network> mask <mask>` | Advertise route | Shares a network in BGP. |
 | `show ip bgp summary` | Verify neighbors | Displays BGP session and status. |
 
-
+<br/>
 ##  DHCP (Dynamic Host Configuration Protocol)
 
 | Command | Use | Description |
@@ -153,7 +153,7 @@
 | `default-router <IP>` | Set gateway | Sets default gateway for clients. |
 | `show ip dhcp binding` | Verify leases | Lists IPs assigned by DHCP. |
 
-
+<br/>
 
 ##  NAT & PAT
 
@@ -163,7 +163,7 @@
 | `ip nat inside source list <ACL> interface <int> overload` | PAT | Allows many private IPs to share one public IP. |
 | `show ip nat translations` | Check NAT table | Displays active NAT/PAT translations. |
 
-
+<br/>
 ##  ACL (Access Control List)
 
 | Command | Use | Description |
@@ -172,7 +172,7 @@
 | `ip access-group <no> in/out` | Apply ACL | Attaches ACL to an interface. |
 | `show access-lists` | Verify ACLs | Shows configured ACL rules. |
 
-
+<br/>
 ##  LAN Switching
 
 | Command | Use | Description |
@@ -182,7 +182,7 @@
 | `switchport mode access/trunk` | Set port type | Defines access or trunk mode. |
 | `show interfaces status` | Interface overview | Displays port speed, duplex, and VLAN info. |
 
-
+<br/>
 ##  Network Troubleshooting Commands
 
 | Command | Use | Description |
@@ -191,7 +191,7 @@
 | `traceroute <ip>` / `tracert <ip>` | Trace network path | Shows the route packets take hop-by-hop to reach the destination |
 | `telnet <ip> <port>` | Test port access | Checks if a specific service/port on a remote device is reachable |
 | `ssh user@ip` | Secure remote login | Allows secure access to remote devices for configuration and management |
-
+<br/>
 
 
 
