@@ -208,10 +208,9 @@ In simple words
 A company uses two routers to avoid network failure:
 
 - Router 1 = Active Router  
-- Router 2 = Standby Router  
-- Both share the same virtual gateway IP `192.168.1.1`
-
-#### If Router 1 fails due to power issues, Router 2 immediately becomes active.  
+- Router 2 = Standby Router
+Both share the same virtual gateway IP `192.168.1.1`
+If Router 1 fails due to power issues, Router 2 immediately becomes active.  
 Users continue accessing the network without any interruption.  
 This is achieved through protocols like **HSRP**, **VRRP**, or **GLBP**.
 ---
