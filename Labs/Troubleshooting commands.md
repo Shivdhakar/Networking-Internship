@@ -134,7 +134,7 @@ line vty 0 4
 enable secret cisco
 ~~~
 
-## LAB TESTS (The Main Part)
+## LAB TESTS of all four commands 
 
 Now PC1 will run all four troubleshooting commands.
 
@@ -176,7 +176,7 @@ we  will see hops:
 
 If traceroute stops at a hop  issue is at that router.
 
- ## Test 3: Telnet (Remote login test)
+ ## Test 3: Telnet 
  Purpose:
 
 To check if R2 telnet port is open.
