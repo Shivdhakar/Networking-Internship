@@ -7,7 +7,7 @@ BGP is used on the internet for sharing routes between service providers and lar
  ## Devices  I Used
  Routers
 
-### 2 × Cisco 2901 routers (you can use 2811/1941 also)
+### 2 × Cisco 2901 routers (we  can use any both of these routers 2811/1941 ) but i choose 2901 for these
 
  PCs
 
