@@ -1,4 +1,4 @@
-# Router Redundancy, Firewall, VPN  – Notes
+# Router Redundancy, Firewall, and VPN  
 
 In a corporate network, the main goals are:
 
@@ -13,6 +13,7 @@ To achieve this, companies use:
 - VPN (Virtual Private Network)  
 - SSL / TLS (for secure communication)
 
+<br/>
 
 ##  Router Redundancy
 
@@ -70,6 +71,7 @@ If the Active router fails:
 **Use Case**: Simple active–standby gateway for LANs using Cisco devices.
 
 ---
+<br/>
 
 ###  VRRP (Virtual Router Redundancy Protocol)
 
