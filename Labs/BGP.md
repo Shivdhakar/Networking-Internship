@@ -5,54 +5,60 @@ BGP is used on the internet for sharing routes between service providers and lar
 
 
  ## Devices  I Used
-🔵 Routers
+ Routers
 
 ### 2 × Cisco 2901 routers (you can use 2811/1941 also)
 
-🟢 PCs
+ PCs
 
 2 × Standard PCs
 
-🔌 Cables
+ Cables
 
-Serial DCE cable for router-to-router
+#### Serial DCE cable for router-to-router
 
-Copper Straight-Through cable for PC-to-router
+we use Copper Straight-Through cable for PC-to-router
 
 ## Device Connections
  Router R1 → Router R2 (Serial)
 
-Use Serial DCE cable
+### we Use Serial DCE cable
 
 R1 → Serial0/0/0
 
 R2 → Serial0/0/0
 
-4.2 PC1 → R1
+ PC1 → R1
 
 Use Copper Straight-Through
 
 PC1 FastEthernet0 → R1 GigabitEthernet0/0
 
-4.3 PC2 → R2
+ PC2 → R2
 
 Use Copper Straight-Through
 
 PC2 FastEthernet0 → R2 GigabitEthernet0/0
 
-⚙️ 5. IP Addressing
-📍 PC1
+## IP Addressing
+ PC1
+ ~~~
 IP Address: 10.1.1.10
 Subnet Mask: 255.255.255.0
 Gateway: 10.1.1.1
+~~~
 
-📍 PC2
+ PC2
+ ~~~
 IP Address: 20.1.1.10
 Subnet Mask: 255.255.255.0
 Gateway: 20.1.1.1
+~~~
 
-🧮 6. Router Configurations
-🖧 Router R1 Configuration
+## Router Configurations
+
+ Router R1 Configuration
+ ~~~
 enable
 configure terminal
 
@@ -71,8 +77,10 @@ router bgp 65001
 
 end
 write
+~~~
 
-🖧 Router R2 Configuration
+Router R2 Configuration
+~~~
 enable
 configure terminal
 
@@ -90,27 +98,35 @@ router bgp 65002
 
 end
 write
+~~~
 
-🧪 7. Verification Commands
-✔ Check BGP Neighbor
+## Verification Commands
+
+for Check BGP Neighbor
+~~~
 show ip bgp summary
-
+~~~
 
 Expected:
-
+~~~
 State = Established
+~~~
 
-✔ Check BGP Routing Table
+### Check BGP Routing Table
+~~~
 show ip bgp
+~~~
 
-✔ Check Router’s IP Routes
+### Check Router’s IP Routes
+~~~
 show ip route
+~~~
 
-✔ End-to-End Ping (PC1 → PC2)
+### End-to-End Ping (PC1 → PC2)
 
-On PC1:
-
+On PC1: we use
+~~~ 
 ping 20.1.1.10
-
+~~~
 
 Ping should be successful.
