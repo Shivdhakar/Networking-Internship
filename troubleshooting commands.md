@@ -162,6 +162,7 @@
 | `show ip bgp summary` | Verify neighbors | Displays BGP session and status. |
 
 <br/>
+
 ## DHCP (Dynamic Host Configuration Protocol)
 
 <br/>
@@ -186,6 +187,7 @@
 | `show ip nat translations` | Check NAT table | Displays active NAT/PAT translations. |
 
 <br/>
+
 ## ACL (Access Control List)
 
 <br/>
@@ -197,6 +199,7 @@
 | `show access-lists` | Verify ACLs | Shows configured ACL rules. |
 
 <br/>
+
 ## LAN Switching
 
 <br/>
@@ -209,6 +212,7 @@
 | `show interfaces status` | Interface overview | Displays port speed, duplex, and VLAN info. |
 
 <br/>
+
 ## Network Troubleshooting Commands
 
 <br/>
