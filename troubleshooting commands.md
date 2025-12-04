@@ -41,7 +41,7 @@
 
 ##  OSI Model
 
-
+<br/>
 
 
 
@@ -60,8 +60,9 @@
 
 <br/>
 
-##  TCP/IP Model
+## TCP/IP Model
 
+<br/>
 | Layer | Function | Protocols/Commands |
 |--------|-----------|--------------------|
 | Network Access | Physical data delivery | Ethernet, ARP |
@@ -71,8 +72,8 @@
 
 <br/>
 
-##  L2 & L3 Concepts (VLANs and Trunks)
-
+## L2 & L3 Concepts (VLANs and Trunks)
+<br/>
 | Command | Use | Description |
 |----------|-----|-------------|
 | `vlan <ID>` | Create VLAN | Segments the switch into logical groups. |
@@ -82,8 +83,8 @@
 | `show interfaces trunk` | Verify trunks | Checks trunk status and allowed VLANs. |
 
 <br/>
-##  Spanning Tree Protocol (STP)
-
+## Spanning Tree Protocol (STP)
+<br/>
 | Command | Use | Description |
 |----------|-----|-------------|
 | `show spanning-tree` | Check STP status | Shows root bridge, ports, and topology. |
@@ -92,7 +93,7 @@
 
 <br/>
 
-##  Routing (General)
+## Routing (General)
 
 | Command | Use | Description |
 |----------|-----|-------------|
@@ -102,8 +103,8 @@
 
 
 <br/>
-##  RIP (Routing Information Protocol)
-
+## RIP (Routing Information Protocol)
+<br/>
 | Command | Use | Description |
 |----------|-----|-------------|
 | `router rip` | Enable RIP | Starts the RIP process. |
@@ -113,8 +114,8 @@
 
 <br/>
 
-##  OSPF (Open Shortest Path First)
-
+## OSPF (Open Shortest Path First)
+<br/>
 | Command | Use | Description |
 |----------|-----|-------------|
 | `router ospf <process-id>` | Start OSPF | Enables OSPF routing. |
@@ -124,8 +125,8 @@
 
 <br/>
 
-##  EIGRP (Enhanced Interior Gateway Routing Protocol)
-
+## EIGRP (Enhanced Interior Gateway Routing Protocol)
+<br/>
 | Command | Use | Description |
 |----------|-----|-------------|
 | `router eigrp <ASN>` | Start EIGRP | Enables EIGRP routing. |
@@ -134,8 +135,8 @@
 | `show ip eigrp topology` | View topology | Shows all learned routes and successors. |
 <br/>
 
-##  BGP (Border Gateway Protocol)
-
+## BGP (Border Gateway Protocol)
+<br/>
 | Command | Use | Description |
 |----------|-----|-------------|
 | `router bgp <ASN>` | Start BGP | Enables BGP process. |
@@ -144,8 +145,8 @@
 | `show ip bgp summary` | Verify neighbors | Displays BGP session and status. |
 
 <br/>
-##  DHCP (Dynamic Host Configuration Protocol)
-
+## DHCP (Dynamic Host Configuration Protocol)
+<br/>
 | Command | Use | Description |
 |----------|-----|-------------|
 | `ip dhcp pool <name>` | Create DHCP pool | Defines a DHCP address pool. |
@@ -155,8 +156,8 @@
 
 <br/>
 
-##  NAT & PAT
-
+## NAT & PAT
+<br/>
 | Command | Use | Description |
 |----------|-----|-------------|
 | `ip nat inside source static <in> <out>` | Static NAT | Maps one private IP to one public IP. |
@@ -164,8 +165,8 @@
 | `show ip nat translations` | Check NAT table | Displays active NAT/PAT translations. |
 
 <br/>
-##  ACL (Access Control List)
-
+## ACL (Access Control List)
+<br/>
 | Command | Use | Description |
 |----------|-----|-------------|
 | `access-list <no> permit/deny <protocol> <source> <dest>` | Create ACL | Defines traffic filtering rules. |
@@ -173,8 +174,8 @@
 | `show access-lists` | Verify ACLs | Shows configured ACL rules. |
 
 <br/>
-##  LAN Switching
-
+## LAN Switching
+<br/>
 | Command | Use | Description |
 |----------|-----|-------------|
 | `show mac address-table` | View MAC table | Lists MAC addresses learned on switch ports. |
@@ -183,15 +184,15 @@
 | `show interfaces status` | Interface overview | Displays port speed, duplex, and VLAN info. |
 
 <br/>
-##  Network Troubleshooting Commands
-
+## Network Troubleshooting Commands
+<br/>
 | Command | Use | Description |
 |--------|------|------------|
 | `ping <ip>` | Test connectivity | Sends ICMP Echo packets to verify device reachability |
 | `traceroute <ip>` / `tracert <ip>` | Trace network path | Shows the route packets take hop-by-hop to reach the destination |
 | `telnet <ip> <port>` | Test port access | Checks if a specific service/port on a remote device is reachable |
 | `ssh user@ip` | Secure remote login | Allows secure access to remote devices for configuration and management |
-<br/>
+
 
 
 
