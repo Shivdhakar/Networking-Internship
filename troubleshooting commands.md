@@ -74,7 +74,9 @@
 <br/>
 
 ## L2 & L3 Concepts (VLANs and Trunks)
+
 <br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `vlan <ID>` | Create VLAN | Segments the switch into logical groups. |
@@ -84,8 +86,11 @@
 | `show interfaces trunk` | Verify trunks | Checks trunk status and allowed VLANs. |
 
 <br/>
+
 ## Spanning Tree Protocol (STP)
+
 <br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `show spanning-tree` | Check STP status | Shows root bridge, ports, and topology. |
@@ -96,6 +101,8 @@
 
 ## Routing (General)
 
+<br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `show ip route` | View routing table | Displays all learned and static routes. |
@@ -104,8 +111,11 @@
 
 
 <br/>
+
 ## RIP (Routing Information Protocol)
+
 <br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `router rip` | Enable RIP | Starts the RIP process. |
@@ -116,7 +126,9 @@
 <br/>
 
 ## OSPF (Open Shortest Path First)
+
 <br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `router ospf <process-id>` | Start OSPF | Enables OSPF routing. |
@@ -127,7 +139,9 @@
 <br/>
 
 ## EIGRP (Enhanced Interior Gateway Routing Protocol)
+
 <br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `router eigrp <ASN>` | Start EIGRP | Enables EIGRP routing. |
@@ -137,7 +151,9 @@
 <br/>
 
 ## BGP (Border Gateway Protocol)
+
 <br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `router bgp <ASN>` | Start BGP | Enables BGP process. |
@@ -147,7 +163,9 @@
 
 <br/>
 ## DHCP (Dynamic Host Configuration Protocol)
+
 <br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `ip dhcp pool <name>` | Create DHCP pool | Defines a DHCP address pool. |
@@ -158,7 +176,9 @@
 <br/>
 
 ## NAT & PAT
+
 <br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `ip nat inside source static <in> <out>` | Static NAT | Maps one private IP to one public IP. |
@@ -167,7 +187,9 @@
 
 <br/>
 ## ACL (Access Control List)
+
 <br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `access-list <no> permit/deny <protocol> <source> <dest>` | Create ACL | Defines traffic filtering rules. |
@@ -176,7 +198,9 @@
 
 <br/>
 ## LAN Switching
+
 <br/>
+
 | Command | Use | Description |
 |----------|-----|-------------|
 | `show mac address-table` | View MAC table | Lists MAC addresses learned on switch ports. |
@@ -186,7 +210,9 @@
 
 <br/>
 ## Network Troubleshooting Commands
+
 <br/>
+
 | Command | Use | Description |
 |--------|------|------------|
 | `ping <ip>` | Test connectivity | Sends ICMP Echo packets to verify device reachability |
