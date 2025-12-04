@@ -1,7 +1,7 @@
-# ACL Lab – Cisco Packet Tracer
+# ACL Lab in Cisco Packet Tracer
 ## Objective
 
-Configure and verify Access Control List (ACL) to control network traffic.
+we Configure and verify Access Control List (ACL) to control network traffic. So for these we use pc and routers and all steps are i taken in cisco lab is there.
 
 # Topology
 
