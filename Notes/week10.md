@@ -1,5 +1,7 @@
 # Router Redundancy and Firewall
 
+<br/>
+
 In a corporate network, the main goals are:
 
 - The network should not go down if one device fails.  
@@ -14,6 +16,7 @@ To achieve this, companies use:
 - SSL / TLS (for secure communication)
 
 ---
+<br/>
 
 # Router Redundancy
 
@@ -21,9 +24,9 @@ To achieve this, companies use:
 
 Every computer in a network uses a default gateway (usually a router) to reach:
 
-- The internet  
-- Other networks  
-- Cloud services  
+ The internet  
+ Other networks  
+ Cloud services  
 
 If the only router in the network goes down:
 
@@ -44,23 +47,23 @@ This setup is called **Router Redundancy**.
 
 Imagine two teachers sharing one classroom:
 
-- **Teacher A** teaches.  
-- **Teacher B** waits outside in case Teacher A gets sick.
+ **Teacher A** teaches.  
+ **Teacher B** waits outside in case Teacher A gets sick.
 
 Same in networking:
 
-- Two routers share one **virtual IP address** (example: `192.168.1.1`).  
-- PCs use this virtual IP as their default gateway.
+ Two routers share one **virtual IP address** (example: `192.168.1.1`).  
+ PCs use this virtual IP as their default gateway.
 
 ### Roles in Router Redundancy
 
-- **Active Router / Master** → currently forwarding traffic  
-- **Standby Router / Backup** → waiting to take over  
+ **Active Router / Master** → currently forwarding traffic  
+ **Standby Router / Backup** → waiting to take over  
 
 If the active router fails:
 
-- The standby router becomes the new active gateway instantly  
-- Users do **not** notice any change  
+ The standby router becomes the new active gateway instantly  
+ Users do **not** notice any change  
 
 This automatic switching is handled by **FHRP protocols**.
 
@@ -76,8 +79,6 @@ We study 3 main types:
 2. **VRRP** (Open standard)  
 3. **GLBP** (Cisco only + load balancing)
 
----
-
 
 ## First Hop Redundancy Protocols (FHRP)
 
@@ -92,6 +93,7 @@ VRRP (Open standard)
 GLBP (Cisco only + load balancing)
 
 
+<br/>
 
 ## 1. HSRP (Hot Standby Router Protocol)
   
@@ -122,6 +124,7 @@ In simple words
 - For Cisco-only environments  
 
 ---
+<br/>
 
 ## 2. VRRP (Virtual Router Redundancy Protocol)
 
@@ -150,6 +153,7 @@ In simple words
 - Faster failover compared to HSRP  
 
 ---
+<br/>
 
 ## 3. GLBP (Gateway Load Balancing Protocol)
 
@@ -194,7 +198,7 @@ In simple words
 
 ---
 
-##  Simple One-Line Definitions
+##  Simple One-Line Definition
 
 **HSRP:** Cisco protocol where one router is Active and another is Standby, providing gateway redundancy.
 
