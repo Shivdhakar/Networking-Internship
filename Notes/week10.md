@@ -206,6 +206,16 @@ In simple words
 
 **GLBP:** Cisco protocol that provides redundancy and load balancing by allowing multiple routers to forward traffic together.
 
+## Example of Router Redundancy
+A company uses two routers to avoid network failure:
+
+- Router 1 = Active Router  
+- Router 2 = Standby Router  
+- Both share the same virtual gateway IP `192.168.1.1`
+
+If Router 1 fails due to power issues, Router 2 immediately becomes active.  
+Users continue accessing the network without any interruption.  
+This is achieved through protocols like **HSRP**, **VRRP**, or **GLBP**.
 ---
 
 <br/>
@@ -252,13 +262,16 @@ Companies use firewalls to keep their network safe. They help in:
 
 This separation makes the network more secure.
 
----
+<br/>
 
 # Types of Firewalls
 
+Firewalls can be of different types based on how they inspect and filter network traffic.  
+Below are the main types explained in an easy and detailed way.
+
 ## 1. Packet-Filtering Firewall
 
-This is the most basic firewall. It checks:
+A packet-filtering firewall is the simplest and oldest type of firewall. It checks each packet of data based on basic information such as
 
 - Source IP address  
 - Destination IP address  
@@ -272,13 +285,11 @@ It works using **simple ACL (Access Control List)** rules.
 **Example:**  
 Allow traffic from 192.168.1.0/24 to port 80 (HTTP).
 
----
+<br/>
 
 ## 2. Stateful Firewall
 
-A stateful firewall is smarter than packet-filtering.
-
-It **remembers the state of the connection**.  
+A stateful firewall is smarter than packet-filtering.It **remembers the state of the connection**.  
 It knows:
 
 - Which connections are new  
@@ -288,15 +299,13 @@ It knows:
 This makes it **much more secure**.
 
 Example:  
-If you open a website, the firewall allows the return traffic because it knows the connection is yours.
+If we open a website, the firewall allows the return traffic because it knows the connection is yours.
 
----
+<br/>
 
-## 3. Application Layer Firewall / Next-Generation Firewall (NGFW)
+## 3. Application Layer Firewall /[ Next-Generation Firewall (NGFW) ]
 
-This is the most advanced type.
-
-It understands applications like:
+An application layer firewall, also called a Next-Generation Firewall (NGFW), is the most advanced type. It can look deep inside the traffic and identify which application is being used such as
 
 - Facebook  
 - YouTube  
@@ -319,7 +328,7 @@ It also provides advanced security features:
 
 This is commonly used in modern companies.
 
----
+<br/>
 
 ## 4. Host-Based Firewall
 
@@ -331,7 +340,7 @@ A firewall that runs on individual devices such as:
 
 It protects that single machine only.
 
----
+<br/>
 
 # Simple Firewall Rule Example
 
@@ -349,7 +358,7 @@ A small company firewall may have rules like:
 4. **Deny all other traffic by default**  
    (Only allow what is required; block everything else)
 
----
+<br/>
 
 ## What This Achieves
 
@@ -357,37 +366,6 @@ A small company firewall may have rules like:
 - Customers can open the company website.  
 - Dangerous and outdated services are blocked.  
 - The internal network stays secure and protected.
-
----
-
-# Types of Firewalls (Explained in Simple Student Language)
-
-Firewalls can be of different types based on how they inspect and filter network traffic.  
-Below are the main types explained in an easy and detailed way.
-
----
-
-## 1. Packet-Filtering Firewall
-
-A packet-filtering firewall is the simplest and oldest type of firewall. It checks each packet of data based on basic information such as source IP address, destination IP address, port number, and protocol (TCP or UDP). If the packet matches an allowed rule, it is forwarded; otherwise, it is blocked. This firewall does not understand the full connection or application, so it is less secure compared to advanced firewalls. It works mainly at **Layer 3 (Network layer)** and **Layer 4 (Transport layer)**. Packet filters are fast but provide only basic protection.
-
----
-
-## 2. Stateful Firewall
-
-A stateful firewall is more intelligent than a packet-filtering firewall. It not only checks packet headers but also keeps track of the **state of the connection**. It knows whether a connection is new, already established, or related to another allowed connection. Because it remembers active sessions, it can make better security decisions. This makes stateful firewalls more secure and reliable. Most modern routers and firewalls use stateful inspection to protect corporate networks.
-
----
-
-## 3. Application Layer Firewall / Next-Generation Firewall (NGFW)
-
-An application layer firewall, also called a Next-Generation Firewall (NGFW), is the most advanced type. It can look deep inside the traffic and identify which application is being used, such as Facebook, YouTube, WhatsApp, Gmail, or any specific software. NGFWs can block or allow traffic based on applications, users, content, or URLs. They also include advanced security features like **IDS/IPS**, **deep packet inspection**, **malware protection**, and **URL filtering**. These firewalls operate at **Layer 7 (Application layer)** and provide strong security for modern networks where threats are more complex.
-
----
-
-## 4. Host-Based Firewall
-
-A host-based firewall runs on individual devices like laptops, desktops, or servers. Examples include Windows Defender Firewall, macOS Firewall, or Linux iptables. Instead of protecting the whole network, it protects only the device it is installed on. It monitors and filters traffic coming in and out of that specific machine. Host-based firewalls are useful for adding an extra layer of protection, especially for personal devices and company endpoints.
 
 ---
 
