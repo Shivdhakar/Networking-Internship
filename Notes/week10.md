@@ -2,8 +2,8 @@
 
 In a corporate network, the main goals are:
 
-- The network should not go down if one device fails.
-- Data should be safe and private when it travels over the internet.
+- The network should not go down if one device fails.  
+- Data should be safe and private when it travels over the internet.  
 - Only authorized users should be able to access company resources.
 
 To achieve this, companies use:
@@ -13,63 +13,71 @@ To achieve this, companies use:
 - VPN (Virtual Private Network)  
 - SSL / TLS (for secure communication)
 
-<br/>
+---
 
-##  Router Redundancy
+# Router Redundancy
 
-### Why do we need Router Redundancy?
+## Why Do We Need Router Redundancy?
 
 Every computer in a network uses a default gateway (usually a router) to reach:
 
-The internet
-
-Other networks
-
-Cloud services
+- The internet  
+- Other networks  
+- Cloud services  
 
 If the only router in the network goes down:
 
-❌ No internet
-❌ No communication
-❌ Network failure
+❌ No internet  
+❌ No communication  
+❌ Network failure  
 
-#### This situation is called: { Single point of failure }
+This situation is called **Single Point of Failure**.
 
-To avoid this problem, companies add another router as a backup.
-If one router fails, the second one automatically takes over.
+To avoid this problem, companies add another router as a backup.  
+If one router fails, the second automatically takes over.
 
-#### This setup is called: { Router Redundancy }
+This setup is called **Router Redundancy**.
 
-## What is the basic idea of Router Redundancy?
+---
+
+## What Is the Basic Idea of Router Redundancy?
 
 Imagine two teachers sharing one classroom:
 
-Teacher A teaches.
-
-Teacher B waits outside in case Teacher A gets sick.
+- **Teacher A** teaches.  
+- **Teacher B** waits outside in case Teacher A gets sick.
 
 Same in networking:
 
-Two routers share one virtual IP address (example: 192.168.1.1), and PCs use this one virtual IP as the gateway.
+- Two routers share one **virtual IP address** (example: `192.168.1.1`).  
+- PCs use this virtual IP as their default gateway.
 
-Roles:
+### Roles in Router Redundancy
 
-Active Router / Master → currently forwarding traffic
+- **Active Router / Master** → currently forwarding traffic  
+- **Standby Router / Backup** → waiting to take over  
 
-Standby Router / Backup → waiting to take over
+If the active router fails:
 
-If the active router dies:
+- The standby router becomes the new active gateway instantly  
+- Users do **not** notice any change  
 
-<> The standby router becomes the new active gateway instantly
-<> Users do not notice the change
+This automatic switching is handled by **FHRP protocols**.
 
-#### This automatic switching is done by FHRP protocols:
+---
 
-HSRP
+# First Hop Redundancy Protocols (FHRP)
 
-VRRP
+These protocols help two or more routers act as **one single gateway**.
 
-GLBP
+We study 3 main types:
+
+1. **HSRP** (Cisco only)  
+2. **VRRP** (Open standard)  
+3. **GLBP** (Cisco only + load balancing)
+
+---
+
 
 ## First Hop Redundancy Protocols (FHRP)
 
