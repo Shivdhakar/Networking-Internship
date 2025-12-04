@@ -197,5 +197,5 @@ In real-world and lab troubleshooting:
 4. Use **SSH** for secure remote access and administration
 
 
-**Day** - [Network Troubleshooting Tools](https://claude.ai/public/artifacts/f62c7089-2ba4-41ec-ac60-2d38a54a65d9)  
+# **Day** - [Network Troubleshooting Tools](https://claude.ai/public/artifacts/f62c7089-2ba4-41ec-ac60-2d38a54a65d9)  
 
