@@ -63,6 +63,7 @@
 ## TCP/IP Model
 
 <br/>
+
 | Layer | Function | Protocols/Commands |
 |--------|-----------|--------------------|
 | Network Access | Physical data delivery | Ethernet, ARP |
