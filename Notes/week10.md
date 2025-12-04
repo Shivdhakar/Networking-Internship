@@ -208,75 +208,157 @@ In simple words
 
 ---
 
+<br/>
 
-##  Firewalls in Corporate Networks
+# Firewalls in Corporate Networks
 
-###  What is a firewall?
+## What Is a Firewall?
 
-A **firewall** is a security device (hardware or software) placed between:
+A firewall is a security device or software program that protects a computer network by monitoring and controlling all the data that enters or leaves it. It sits between the internal network (such as a company’s LAN) and the outside world (such as the internet). The firewall analyzes each packet of data and decides whether to allow or block it based on rules defined by the organization. Its main purpose is to prevent unauthorized access, stop harmful traffic, and ensure that only safe and approved communication is permitted. Without a firewall, a network becomes vulnerable to hackers, malware, and unwanted external connections.
 
-- The **internal network (LAN)**, and  
-- The **outside world (internet or other networks)**
+A good example to understand it:
 
-It monitors and controls traffic based on rules.
-
-> A firewall works like a **security guard** at the main gate of a company.
+**A firewall works like a security guard at the main gate of a company.**
 
 It checks:
 
-- Who is coming in?
-- Who is going out?
-- Are they allowed?
+- Who is coming in?  
+- Who is going out?  
+- Are they allowed to enter or leave?  
+- Are they safe?  
+
+If traffic follows the rules → it is allowed.  
+If not → it is blocked.
+
+<br/>
+
+## Why Do Companies Use Firewalls?
+
+Companies use firewalls to keep their network safe. They help in:
+
+1. **Blocking unauthorized access**  
+   Hackers or unknown users should not enter the internal network.
+
+2. **Allowing only required services**  
+   Example: Only allow HTTP, HTTPS, SSH, and block dangerous ports.
+
+3. **Protecting against attacks**  
+   Firewalls stop malware, port scans, brute-force attempts, etc.
+
+4. **Creating different security zones**  
+   - **Internal LAN** → For employees  
+   - **DMZ (Demilitarized Zone)** → For public servers like web or mail server  
+   - **Internet** → Untrusted zone  
+
+This separation makes the network more secure.
 
 ---
 
-###  Why do companies use firewalls?
+# Types of Firewalls
 
-- To block **unauthorized access**
-- To allow only required services (HTTP, HTTPS, SSH, etc.)
-- To protect against attacks (malware, hackers, port scans)
-- To create different security zones:
-  - Internal LAN
-  - DMZ (public servers)
-  - Internet
+## 1. Packet-Filtering Firewall
 
----
+This is the most basic firewall. It checks:
 
-###  Types of Firewalls (Simple View)
+- Source IP address  
+- Destination IP address  
+- Port number  
+- Protocol (TCP/UDP)
 
-#### **Packet-Filtering Firewall**
-- Checks source IP, destination IP, port, and protocol.
-- Uses simple ACL rules.
-- Works at Network & Transport layers.
+It works using **simple ACL (Access Control List)** rules.
 
-#### **Stateful Firewall**
-- Remembers connection states.
-- Understands new, established, and related connections.
-- More secure than packet-filtering.
+**Layers:** Network & Transport layers (Layer 3 & 4)
 
-#### **Application Layer / Next-Gen Firewall (NGFW)**
-- Understands applications like Facebook, WhatsApp, YouTube.
-- Can filter by user identity.
-- Offers IPS/IDS, deep packet inspection, URL filtering.
-
-#### **Host-Based Firewall**
-- Runs on individual devices (e.g., Windows Defender Firewall).
+**Example:**  
+Allow traffic from 192.168.1.0/24 to port 80 (HTTP).
 
 ---
 
-###  Simple Firewall Rule Example
+## 2. Stateful Firewall
+
+A stateful firewall is smarter than packet-filtering.
+
+It **remembers the state of the connection**.  
+It knows:
+
+- Which connections are new  
+- Which connections are already established  
+- Which connections are related to another connection  
+
+This makes it **much more secure**.
+
+Example:  
+If you open a website, the firewall allows the return traffic because it knows the connection is yours.
+
+---
+
+## 3. Application Layer Firewall / Next-Generation Firewall (NGFW)
+
+This is the most advanced type.
+
+It understands applications like:
+
+- Facebook  
+- YouTube  
+- WhatsApp  
+- Gmail  
+
+It can filter traffic by:
+
+- Application name  
+- User identity  
+- URL categories  
+- Content type  
+
+It also provides advanced security features:
+
+- IDS/IPS (Intrusion Detection / Prevention System)  
+- Deep Packet Inspection  
+- Antivirus / Malware filtering  
+- URL filtering  
+
+This is commonly used in modern companies.
+
+---
+
+## 4. Host-Based Firewall
+
+A firewall that runs on individual devices such as:
+
+- Windows Defender Firewall  
+- macOS Firewall  
+- Linux iptables / ufw  
+
+It protects that single machine only.
+
+---
+
+# Simple Firewall Rule Example
 
 A small company firewall may have rules like:
 
-- Allow outgoing HTTP/HTTPS from LAN to Internet.
-- Allow incoming HTTPS only to the web server in DMZ.
-- Block Telnet (port 23) everywhere.
-- Deny all other traffic by default.
+1. **Allow outgoing HTTP/HTTPS** from LAN to Internet  
+   (Employees can browse websites)
 
-This ensures:
+2. **Allow incoming HTTPS** only to the web server in DMZ  
+   (Customers can visit the company website)
 
-- Employees can browse safely.
-- Customers can access the company website.
-- Dangerous services are blocked.
+3. **Block Telnet (port 23)** everywhere  
+   (Because Telnet is unsafe and unencrypted)
+
+4. **Deny all other traffic by default**  
+   (Only allow what is required; block everything else)
+
+---
+
+## What This Achieves
+
+- Employees can safely access the internet.  
+- Customers can open the company website.  
+- Dangerous and outdated services are blocked.  
+- The internal network stays secure and protected.
+
+---
+
 
 
