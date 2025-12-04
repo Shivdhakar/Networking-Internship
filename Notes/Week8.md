@@ -2,6 +2,8 @@
 
 Troubleshooting in networking means finding and fixing issues that stop devices from communicating. As B.Tech students, we often use basic tools to check connectivity, find delays, and verify whether services are running properly.
 
+ <br/>
+ 
 ##  1. **ping**
 
 **Purpose:**  
@@ -46,6 +48,7 @@ Typing `ping 8.8.8.8` in terminal checks internet connectivity by contacting Goo
 If there is no reply, it means network failure, device is off, wrong IP, or ICMP is blocked.
 
 ---
+<br/>
 
 ##  2. **traceroute / tracert** (Windows)
 
@@ -90,6 +93,7 @@ Traceroute is very useful to find **where exactly the network is failing**
 If traceroute stops at a hop, that hop might be down, overloaded, or blocked.
 
 ---
+<br/>
 
 ##  3. **telnet**
 
@@ -129,6 +133,7 @@ Typing `telnet 192.168.1.10 80` tests if port 80 (web server) is running on that
 - If connection fails → **port blocked or service down**
 
 ---
+<br/>
 
 ##  4. **SSH (Secure Shell)**
 
@@ -169,6 +174,7 @@ It is commonly used by:
 Typing `ssh username@192.168.1.10` connects securely to the device.
 
 ---
+<br/>
 
 ##  Table
 
