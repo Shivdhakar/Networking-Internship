@@ -24,9 +24,9 @@ To achieve this, companies use:
 
 Every computer in a network uses a default gateway (usually a router) to reach:
 
- The internet  
- Other networks  
- Cloud services  
+ - The internet  
+ - Other networks  
+ - Cloud services  
 
 If the only router in the network goes down:
 
@@ -34,23 +34,23 @@ If the only router in the network goes down:
 ❌ No communication  
 ❌ Network failure  
 
-This situation is called **Single Point of Failure**.
+- This situation is called **Single Point of Failure**.
 
 To avoid this problem, companies add another router as a backup.  
 If one router fails, the second automatically takes over.
 
-This setup is called **Router Redundancy**.
+- This setup is called **Router Redundancy**.
 
 ---
 
 ## What Is the Basic Idea of Router Redundancy?
 
-Imagine two teachers sharing one classroom:
+- Imagine two teachers sharing one classroom:
 
  **Teacher A** teaches.  
  **Teacher B** waits outside in case Teacher A gets sick.
 
-Same in networking:
+- Same in networking:
 
  Two routers share one **virtual IP address** (example: `192.168.1.1`).  
  PCs use this virtual IP as their default gateway.
@@ -60,12 +60,12 @@ Same in networking:
  **Active Router / Master** → currently forwarding traffic  
  **Standby Router / Backup** → waiting to take over  
 
-If the active router fails:
+- If the active router fails:
 
  The standby router becomes the new active gateway instantly  
  Users do **not** notice any change  
 
-This automatic switching is handled by **FHRP protocols**.
+- This automatic switching is handled by **FHRP protocols**.
 
 ---
 
