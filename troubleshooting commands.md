@@ -4,7 +4,7 @@
 ##  Networking Basics
 
 
-
+~~~
 
 | Command | Use | Description |
 |----------|-----|-------------|
@@ -14,7 +14,7 @@
 | `arp -a` | View ARP table | Lists MAC and IP address mapping in the network. |
 | `netstat` | View network connections | Shows active connections and listening ports. |
 
-
+~~~
 
 
 
