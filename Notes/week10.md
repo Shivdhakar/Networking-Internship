@@ -78,9 +78,6 @@ We study 3 main types:
 
 <br/>
 
-
-
-
 ## First Hop Redundancy Protocols (FHRP)
 
 These protocols help two or more routers act as one single gateway.
@@ -206,6 +203,7 @@ In simple words
 
 **GLBP:** Cisco protocol that provides redundancy and load balancing by allowing multiple routers to forward traffic together.
 
+
 ## Example of Router Redundancy
 A company uses two routers to avoid network failure:
 
@@ -213,7 +211,7 @@ A company uses two routers to avoid network failure:
 - Router 2 = Standby Router  
 - Both share the same virtual gateway IP `192.168.1.1`
 
-If Router 1 fails due to power issues, Router 2 immediately becomes active.  
+#### If Router 1 fails due to power issues, Router 2 immediately becomes active.  
 Users continue accessing the network without any interruption.  
 This is achieved through protocols like **HSRP**, **VRRP**, or **GLBP**.
 ---
