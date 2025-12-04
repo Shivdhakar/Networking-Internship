@@ -1,7 +1,5 @@
 # Router Redundancy and Firewall
 
-<br/>
-
 In a corporate network, the main goals are:
 
 - The network should not go down if one device fails.  
@@ -15,7 +13,6 @@ To achieve this, companies use:
 - VPN (Virtual Private Network)  
 - SSL / TLS (for secure communication)
 
----
 <br/>
 
 # Router Redundancy
@@ -24,9 +21,9 @@ To achieve this, companies use:
 
 Every computer in a network uses a default gateway (usually a router) to reach:
 
- - The internet  
- - Other networks  
- - Cloud services  
+- The internet  
+- Other networks  
+- Cloud services  
 
 If the only router in the network goes down:
 
@@ -34,40 +31,40 @@ If the only router in the network goes down:
 ❌ No communication  
 ❌ Network failure  
 
-- This situation is called **Single Point of Failure**.
+This situation is called **Single Point of Failure**.
 
 To avoid this problem, companies add another router as a backup.  
 If one router fails, the second automatically takes over.
 
-- This setup is called **Router Redundancy**.
+This setup is called **Router Redundancy**.
 
----
+<br/>
 
 ## What Is the Basic Idea of Router Redundancy?
 
-- Imagine two teachers sharing one classroom:
+Imagine two teachers sharing one classroom:
 
- **Teacher A** teaches.  
- **Teacher B** waits outside in case Teacher A gets sick.
+- **Teacher A** teaches.  
+- **Teacher B** waits outside in case Teacher A gets sick.
 
-- Same in networking:
+Same in networking:
 
- Two routers share one **virtual IP address** (example: `192.168.1.1`).  
- PCs use this virtual IP as their default gateway.
+- Two routers share one **virtual IP address** (example: `192.168.1.1`).  
+- PCs use this virtual IP as their default gateway.
 
 ### Roles in Router Redundancy
 
- **Active Router / Master** → currently forwarding traffic  
- **Standby Router / Backup** → waiting to take over  
+- **Active Router / Master** → currently forwarding traffic  
+- **Standby Router / Backup** → waiting to take over  
 
-- If the active router fails:
+If the active router fails:
 
- The standby router becomes the new active gateway instantly  
- Users do **not** notice any change  
+- The standby router becomes the new active gateway instantly  
+- Users do **not** notice any change  
 
-- This automatic switching is handled by **FHRP protocols**.
+This automatic switching is handled by **FHRP protocols**.
 
----
+<br/>
 
 # First Hop Redundancy Protocols (FHRP)
 
@@ -78,6 +75,10 @@ We study 3 main types:
 1. **HSRP** (Cisco only)  
 2. **VRRP** (Open standard)  
 3. **GLBP** (Cisco only + load balancing)
+
+<br/>
+
+
 
 
 ## First Hop Redundancy Protocols (FHRP)
@@ -105,7 +106,7 @@ In simple words
 - One router is *Active* and the other waits as *Backup*.  
 - If the Active router fails the Backup router automatically takes over.
 
----
+<br/>
 
 ###  How HSRP Works
 - Two routers form an HSRP group.  
@@ -116,14 +117,14 @@ In simple words
 - Routers send *hello messages* to check if the Active router is alive.  
 - If the Active router fails → the Standby router becomes the new Active router *without interruption*.
 
----
+<br/>
 
 ###  Why HSRP Is Used?
 - To avoid network downtime  
 - To remove single point of failure  
 - For Cisco-only environments  
 
----
+
 <br/>
 
 ## 2. VRRP (Virtual Router Redundancy Protocol)
@@ -135,8 +136,8 @@ In simple words
 
 - VRRP works like HSRP but can run on routers from different vendors (Cisco, Juniper, HP).  
 - One router is the **Master**, and others are **Backup**.
-
----
+- 
+<br/>
 
 ###  How VRRP Works
 - Routers share one virtual IP.  
@@ -145,14 +146,13 @@ In simple words
 - If the Master fails → a Backup becomes the new Master automatically.  
 - Works across multiple vendors (multi-vendor support).
 
----
+<br/>
 
 ###  Why VRRP Is Used?
 - For networks with mixed devices  
 - Redundancy across different brands  
 - Faster failover compared to HSRP  
 
----
 <br/>
 
 ## 3. GLBP (Gateway Load Balancing Protocol)
@@ -164,7 +164,7 @@ In simple words
 - GLBP is different from HSRP and VRRP.  
 - Instead of one router working and others waiting, **all routers can share the traffic**.
 
----
+<br/>
 
 ###  How GLBP Works
 
@@ -175,14 +175,14 @@ In simple words
 - Traffic is distributed across all routers.  
 - If one router fails → remaining routers continue forwarding traffic.
 
----
+<br/>
 
 ###  Why GLBP Is Used?
 - Provides load balancing across multiple routers  
 - Provides redundancy at the same time  
 - All routers are used efficiently (no idle router)
 
----
+<br/>
 
 ##  Comparison  Table
 
@@ -196,7 +196,7 @@ In simple words
 | Virtual IP     | ✔           | ✔              | ✔                             |
 | Virtual MAC    | 1           | 1              | Multiple                      |
 
----
+<br/>
 
 ##  Simple One-Line Definition
 
