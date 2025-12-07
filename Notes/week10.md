@@ -91,6 +91,8 @@ VRRP (Open standard)
 GLBP (Cisco only + load balancing)
 
 
+  ## [Click here to view image of types of router Redundancy ](../Asset/router.png)
+  
 <br/>
 
 ## 1. HSRP (Hot Standby Router Protocol)
@@ -240,6 +242,10 @@ If traffic follows the rules → it is allowed.
 If not → it is blocked.
 
 <br/>
+
+
+## [Click here to view image of Firewall ](../Asset/firewak.png)
+
 
 ## Why Do Companies Use Firewalls?
 
