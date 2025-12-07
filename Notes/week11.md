@@ -14,6 +14,7 @@ I can say that VPN hides my real IP address and encrypts all my traffic.<br/>
 VPN makes the public Internet feel like a private office network for me.<br/>
 
 
+  ## [Click here to view image of types of VPN ](../Asset/vpn.png)
 
 ## 2. Types of VPN
 
@@ -77,6 +78,10 @@ Real use: When I use a public VPN service on my phone or laptop, it is very comm
 
 ---
 
+
+  ## [Click here to view image of types of VPN ](../Asset/vpn works.png)
+
+  
 ## 4. VPN Security Features
 
 ### 4.1 Encryption
@@ -111,6 +116,9 @@ Visual: I write a letter (original data). I put this letter inside a bigger enve
 
 
 
+  ## [Click here to view image of types of Tunneling ](../Asset/tunneling.png)
+
+  
 ## 2. Tunneling Protocols 
 
 ### a) GRE (Generic Routing Encapsulation)
