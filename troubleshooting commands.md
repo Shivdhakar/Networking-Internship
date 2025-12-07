@@ -224,6 +224,48 @@
 | `telnet <ip> <port>` | Test port access | Checks if a specific service/port on a remote device is reachable |
 | `ssh user@ip` | Secure remote login | Allows secure access to remote devices for configuration and management |
 
+<br/>
+
+###  VPN Commands
+| Command | Use | Description |
+|---------|-----|-------------|
+| `show crypto isakmp sa` | VPN status | Displays active IKE security associations |
+| `show crypto ipsec sa` | IPsec tunnels | Shows established IPsec tunnels & traffic stats |
+| `clear crypto isakmp` | Reset VPN | Clears IKE negotiations |
+| `show vpn-sessiondb` | Session info | Lists active VPN users/sessions |
+
+<br/>
+
+###  Firewall & Security
+| Command | Use | Description |
+|---------|-----|-------------|
+| `show access-lists` | View ACLs | Displays configured access control lists |
+| `show ip nat translations` | NAT status | Shows active NAT translations |
+| `show firewall` | Firewall rules | Displays active firewall policies |
+| `debug ip packet` | Packet trace | Debugs packet flow (use cautiously) |
 
 
+<br/>
+
+
+###  Tuning & Performance
+| Command | Use | Description |
+|---------|-----|-------------|
+| `show processes cpu` | CPU usage | Monitors router/switch CPU utilization |
+| `show memory` | Memory stats | Displays memory usage & availability |
+| `show logging` | Log analysis | Reviews system event logs |
+| `terminal monitor` | Live logging | Enables real-time log display |
+
+
+<br/>
+
+###  Router Redundancy (HSRP/GLBP/VRRP)
+| Command | Use | Description |
+|---------|-----|-------------|
+| `show standby` | HSRP status | Displays Hot Standby Router Protocol status |
+| `show glbp` | GLBP status | Gateway Load Balancing Protocol status |
+| `show vrrp` | VRRP status | Virtual Router Redundancy Protocol status |
+| `standby preempt` | Priority takeover | Enables preemptive failover |
+
+---
 
