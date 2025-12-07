@@ -244,7 +244,7 @@ If not → it is blocked.
 <br/>
 
 
-## [Click here to view image of Firewall ](../Asset/firewak.png)
+## [Click here to view image of Firewall ](../Asset/firewal.png)
 
 
 ## Why Do Companies Use Firewalls?
