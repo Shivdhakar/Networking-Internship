@@ -48,6 +48,8 @@ Typing `ping 8.8.8.8` in terminal checks internet connectivity by contacting Goo
 If there is no reply, it means network failure, device is off, wrong IP, or ICMP is blocked.
 
 ---
+## [Click here to view image of ping ](../Asset/ping.png)
+
 <br/>
 
 ##  2. **traceroute / tracert** (Windows)
@@ -93,6 +95,9 @@ Traceroute is very useful to find **where exactly the network is failing**
 If traceroute stops at a hop, that hop might be down, overloaded, or blocked.
 
 ---
+
+## [Click here to view image of traceroute](../Asset/traceroute.png)
+
 <br/>
 
 ##  3. **telnet**
@@ -174,6 +179,9 @@ It is commonly used by:
 Typing `ssh username@192.168.1.10` connects securely to the device.
 
 ---
+
+## [Click here to view image of SSH ](../Asset/ssh.png)
+
 <br/>
 
 ##  Table
