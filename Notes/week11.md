@@ -79,7 +79,7 @@ Real use: When I use a public VPN service on my phone or laptop, it is very comm
 ---
 
 
-  ## [Click here to view image of types of VPN ](../Asset/vpn works.png)
+  ## [Click here to view image of types of VPN ](../Asset/vpnworks.png)
 
   
 ## 4. VPN Security Features
