@@ -13,9 +13,9 @@ Key exam points:<br/>
 I can say that VPN hides my real IP address and encrypts all my traffic.<br/>
 VPN makes the public Internet feel like a private office network for me.<br/>
 
----
 
-## 2. Types of VPN (With Examples)
+
+## 2. Types of VPN
 
 ### a) Site-to-Site VPN
 
@@ -43,7 +43,7 @@ Real use: Banks like HDFC and ICICI use MPLS VPN from providers like Airtel or R
 
 ---
 
-## 3. VPN Protocols (With Examples)
+## 3. VPN Protocols 
 
 ### a) PPTP (Point-to-Point Tunneling Protocol)
 
@@ -77,7 +77,7 @@ Real use: When I use a public VPN service on my phone or laptop, it is very comm
 
 ---
 
-## 4. VPN Security Features (With Examples)
+## 4. VPN Security Features
 
 ### 4.1 Encryption
 
@@ -99,7 +99,7 @@ Example: A hacker captures my valid login packet at 10 AM and tries to send the 
 
 ---
 
-# Tunneling – Student Notes (With Examples)
+# Tunneling 
 
 ## 1. What is Tunneling?
 
@@ -109,9 +109,9 @@ Real example: My office uses IPv6 inside, but my ISP only supports IPv4. My IPv6
 
 Visual: I write a letter (original data). I put this letter inside a bigger envelope (tunnel packet). The post office reads only the outer envelope and delivers it. The receiver opens the outer envelope and reads my original letter.<br/>
 
----
 
-## 2. Tunneling Protocols (With Examples)
+
+## 2. Tunneling Protocols 
 
 ### a) GRE (Generic Routing Encapsulation)
 
@@ -130,9 +130,39 @@ Real use: Enterprises use IPsec tunnel mode to connect branch networks securely 
 
 ---
 
-## 3. Tunneling Process (Complete Example)
+## 3. Tunneling Process 
 
 Scenario: A PC in Delhi office with IP 192.168.1.10 wants to ping a server in Jaipur office with IP 192.168.2.20 over the Internet.<br/>
 
 Step 1: Encapsulation at Delhi router:<br/>
 The PC creates a normal IP packet from 192.168.1.10 to 192.168.2.20. The tunnel endpoint at Delhi takes
+
+### Step 2: Transmission
+
+In this step the encapsulated packet actually travels over the Internet from Delhi side to Jaipur side.[web:24][web:29]<br/>
+The path can look like: Delhi public IP → Router A → Router B → Jaipur public IP.[web:24]<br/>
+All the Internet routers in between mainly look at the outer tunnel header (for example outer GRE or IPsec header) and forward the packet based on that outer information only, they do not see or care about the inner private IP packet.[web:24][web:29]<br/>
+
+### Step 3: Decapsulation (Jaipur Router)
+
+When the packet reaches the tunnel endpoint in Jaipur, that router receives something like this in concept: [outer tunnel header | original packet 192.168.1.10 → 192.168.2.20 | ping].[web:24][web:29]<br/>
+The tunnel endpoint removes the outer tunnel header, keeps the original inner packet and then forwards that inner packet inside the Jaipur LAN to the final server 192.168.2.20 where the ping reply will be generated.[web:24][web:29]<br/>
+
+Exam line I can remember:
+Tunneling means original packet is created, then I add a tunnel header, send it through the network, remove the tunnel header at the other end and finally the same original packet is delivered.[web:24]
+
+
+# VPN vs Tunneling – Difference Table
+
+| Point       | VPN                                                      | Tunneling                                                     |
+|------------|-----------------------------------------------------------|---------------------------------------------------------------|
+| Definition | A complete secure virtual private network solution over a public or shared network | A technique of putting one packet or protocol inside another packet |
+| Example    | I connect from home to my office network securely using a Remote Access VPN | An IPv6 packet is carried inside an IPv4 packet across an ISP |
+| Security   | Normally has encryption, authentication and integrity features together | By itself may have no security, for example plain GRE or L2TP |
+| User sees  | I feel like I am on a private office LAN even though I am on the Internet | I usually do not see tunneling directly, it is hidden in routers |
+| Protocols  | IPsec, SSL VPN, OpenVPN, WireGuard and similar VPN protocols | GRE, L2TP, IP‑in‑IP and other encapsulation mechanisms        |
+| Purpose    | To give secure remote access and secure connectivity between sites or users | To transport traffic or translate protocols across other networks |
+
+One line that I can write in exam:
+VPN is basically tunneling plus security features like encryption and authentication, while tunneling alone is only the encapsulation process without full security.[web:21][web:27]
+
