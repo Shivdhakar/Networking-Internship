@@ -164,5 +164,8 @@ Tunneling means original packet is created, then I add a tunnel header, send it 
 | Purpose    | To give secure remote access and secure connectivity between sites or users | To transport traffic or translate protocols across other networks |
 
 One line that I can write in exam:
-VPN is basically tunneling plus security features like encryption and authentication, while tunneling alone is only the encapsulation process without full security.[web:21][web:27]
+VPN is basically tunneling plus security features like encryption and authentication, while tunneling alone is only the encapsulation process without full security.
+
+
+# **Day** - [VPN & TUNNELING](https://claude.ai/public/artifacts/a40f8498-55f3-4a59-aa79-6ec64d843462)  
 
